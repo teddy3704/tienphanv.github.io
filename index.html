@@ -1,277 +1,332 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="vi">
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Phan Văn Tiến — Software Engineer / Full-stack Developer</title>
-  <meta name="description" content="CV cá nhân của Phan Văn Tiến — Software Engineer / Full-stack Developer. Dự án, kinh nghiệm, kỹ năng, học vấn, liên hệ." />
-  <link rel="canonical" href="https://tienphanv.io.vn" />
-  <meta name="color-scheme" content="light dark" />
-  <meta property="og:title" content="Phan Văn Tiến — CV" />
-  <meta property="og:description" content="Software Engineer / Full-stack Developer" />
+  <title>Phan Văn Tiến — CV / Portfolio</title>
+  <meta name="description" content="CV cá nhân của Phan Văn Tiến — Software Engineer / Full‑stack Developer tại Đà Lạt, Việt Nam." />
+  <meta name="author" content="Phan Văn Tiến" />
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='6' fill='%231a1b26'/%3E%3Cpath fill='%23fff' d='M6 22h7.2c3.6 0 6-2.4 6-5.6S16.8 11 13.2 11H8V8h13v3h-2.8c2.6 1.1 4.3 3.4 4.3 6.2 0 4.3-3.7 7.8-9.3 7.8H6z'/%3E%3C/svg%3E" />
+  <meta property="og:title" content="Phan Văn Tiến — CV / Portfolio" />
+  <meta property="og:description" content="Software Engineer · Full‑stack Developer tại Đà Lạt, Việt Nam." />
   <meta property="og:type" content="website" />
-  <meta property="og:url" content="https://tienphanv.io.vn" />
-  <meta property="og:image" content="avatar.jpg" />
-  <link rel="icon" href='data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><rect width="100" height="100" rx="20" fill="%231d4ed8"/><text x="50" y="60" font-size="56" text-anchor="middle" fill="white" font-family="Arial">TP</text></svg>'>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
-
-  <style>
-    :root{
-      --bg:#ffffff; --panel:#f8fafc; --text:#0f172a; --muted:#475569;
-      --accent:#2563eb; --accent-2:#60a5fa; --chip:#e2e8f0; --bd:#e2e8f0;
-      --shadow:0 10px 30px rgba(2,6,23,.08); --r:18px; --r-sm:12px;
-    }
-    @media (prefers-color-scheme: dark){
-      :root{
-        --bg:#0b0f1a; --panel:#0f1524; --text:#e5e7eb; --muted:#94a3b8;
-        --accent:#60a5fa; --accent-2:#93c5fd; --chip:#1f2937; --bd:#1f2937;
-        --shadow:0 16px 40px rgba(0,0,0,.45);
-      }
-    }
-    [data-theme="light"]{--bg:#fff;--panel:#f8fafc;--text:#0f172a;--muted:#475569;--accent:#2563eb;--accent-2:#60a5fa;--chip:#e2e8f0;--bd:#e2e8f0;--shadow:0 10px 30px rgba(2,6,23,.08)}
-    [data-theme="dark"] {--bg:#0b0f1a;--panel:#0f1524;--text:#e5e7eb;--muted:#94a3b8;--accent:#60a5fa;--accent-2:#93c5fd;--chip:#1f2937;--bd:#1f2937;--shadow:0 16px 40px rgba(0,0,0,.45)}
-
-    *{box-sizing:border-box}
-    html,body{margin:0;padding:0}
-    body{font-family:Inter,system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif;background:var(--bg);color:var(--text);line-height:1.7}
-    a{color:var(--accent);text-decoration:none}
-    a:hover{text-decoration:underline}
-    .container{max-width:1100px;margin:38px auto;padding:0 20px}
-
-    /* Header */
-    .header{display:grid;grid-template-columns:132px 1fr;gap:22px;align-items:center;background:var(--panel);border:1px solid var(--bd);border-radius:var(--r);padding:18px;box-shadow:var(--shadow);position:relative;overflow:hidden}
-    .header::after{content:"";position:absolute;inset:0;background:radial-gradient(1200px 500px at -10% -20%,rgba(37,99,235,.12),transparent 60%),radial-gradient(800px 400px at 120% 120%,rgba(96,165,250,.10),transparent 60%);mix-blend-mode:screen;pointer-events:none}
-    .avatar{width:120px;height:120px;border-radius:16px;object-fit:cover;border:4px solid var(--bd);background:#cbd5e1;filter:saturate(1.05);transition:transform .35s ease}
-    .avatar:hover{transform:scale(1.02) rotate(-.5deg)}
-    h1{margin:0;font-size:28px;line-height:1.2}
-    .role{color:var(--muted);font-weight:600;margin-top:4px}
-    .contact{display:flex;flex-wrap:wrap;gap:10px;margin-top:12px;color:var(--muted)}
-    .badge{display:inline-flex;align-items:center;gap:8px;padding:6px 10px;border-radius:999px;background:var(--chip);color:var(--text);border:1px solid var(--bd);font-weight:600;font-size:13px}
-    .toolbar{display:flex;gap:10px;margin-left:auto}
-    .btn{border:1px solid var(--bd);background:var(--bg);color:var(--text);padding:10px 12px;border-radius:12px;font-weight:700;cursor:pointer}
-    .btn:hover{filter:brightness(1.05)}
-
-    /* Layout */
-    .grid{display:grid;grid-template-columns:1fr 330px;gap:24px;margin-top:24px}
-    .card{background:var(--panel);border:1px solid var(--bd);border-radius:var(--r);padding:20px;box-shadow:var(--shadow)}
-    .section-title{margin:0 0 12px;font-size:18px;letter-spacing:.3px}
-
-    /* Chips */
-    .chips{display:flex;flex-wrap:wrap;gap:10px}
-    .chip{background:var(--chip);border:1px solid var(--bd);padding:6px 10px;border-radius:999px;font-weight:600;font-size:13px}
-
-    /* Experience timeline (new) */
-    .xp{position:relative}
-    .xp::before{content:"";position:absolute;left:18px;top:0;bottom:0;width:2px;background:var(--bd)}
-    .xp-item{position:relative;display:grid;grid-template-columns:56px 1fr;gap:14px;padding:14px;border:1px solid var(--bd);border-radius:16px;background:var(--bg);margin-left:0}
-    .xp-item+.xp-item{margin-top:14px}
-    .xp-dot{position:absolute;left:12px;top:22px;width:12px;height:12px;border-radius:999px;background:var(--accent);box-shadow:0 0 0 4px rgba(37,99,235,.15)}
-    .xp-logo{width:56px;height:56px;border-radius:12px;display:flex;align-items:center;justify-content:center;border:1px solid var(--bd);background:var(--panel)}
-    .xp-title{margin:0;font-weight:800}
-    .xp-meta{display:flex;flex-wrap:wrap;gap:10px;margin:4px 0 8px}
-    .pill{display:inline-flex;align-items:center;gap:6px;padding:4px 8px;border-radius:999px;border:1px solid var(--bd);font-size:12px;color:var(--muted);background:var(--chip)}
-    .xp-desc{margin:8px 0 6px}
-    .tech{display:flex;flex-wrap:wrap;gap:8px;margin-top:6px}
-    .tech .chip{font-size:12px;padding:4px 8px}
-
-    /* Right column */
-    .col{display:flex;flex-direction:column;gap:14px}
-    .lang{display:flex;justify-content:space-between;font-weight:700}
-    .bar{height:8px;border-radius:999px;background:var(--chip);margin-top:6px;overflow:hidden}
-    .bar>span{display:block;height:100%;background:linear-gradient(90deg,var(--accent),var(--accent-2))}
-
-    footer{color:var(--muted);text-align:center;margin:22px 0}
-
-    @media print {.toolbar,.btn,.contact .badge{display:none!important}.container{margin:0;max-width:100%}body{background:#fff}.card,.header{box-shadow:none}}
-    @media (max-width:920px){.grid{grid-template-columns:1fr}.header{grid-template-columns:100px 1fr}.avatar{width:92px;height:92px}}
-  </style>
-
+  <meta property="og:url" content="https://tienphanv.io.vn/" />
+  <meta property="og:image" content="/assets/cover.jpg" />
+  <meta name="twitter:card" content="summary_large_image" />
   <script type="application/ld+json">
   {
-    "@context":"https://schema.org",
-    "@type":"Person",
-    "name":"Phan Văn Tiến",
-    "jobTitle":"Software Engineer",
-    "url":"https://tienphanv.io.vn",
-    "sameAs":["https://github.com/teddy3704","mailto:2212472@dlu.edu.vn"],
-    "skills":"JavaScript, Node.js, Express, SQL, SQLite, Android, Software Testing"
+    "@context": "https://schema.org",
+    "@type": "Person",
+    "name": "Phan Văn Tiến",
+    "url": "https://tienphanv.io.vn/",
+    "email": "mailto:2212472@dlu.edu.vn",
+    "jobTitle": "Software Engineer",
+    "address": {
+      "@type": "PostalAddress",
+      "addressLocality": "Đà Lạt",
+      "addressRegion": "Lâm Đồng",
+      "addressCountry": "VN"
+    },
+    "sameAs": [
+      "https://github.com/teddy3704"
+    ]
   }
   </script>
+  <link rel="preconnect" href="https://fonts.googleapis.com"/>
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <style>
+    :root{
+      --bg: #0b0e14; /* base */
+      --panel: #121826; /* card */
+      --muted: #94a3b8; /* slate-400 */
+      --text: #e5e7eb; /* gray-200 */
+      --brand: #8b5cf6; /* violet-500 */
+      --brand-2: #22d3ee; /* cyan-400 */
+      --ring: rgba(139,92,246,0.35);
+      --shadow: 0 10px 30px rgba(0,0,0,.25);
+    }
+    @media (prefers-color-scheme: light){
+      :root{
+        --bg:#f8fafc; --panel:#ffffff; --muted:#64748b; --text:#0f172a; --shadow:0 10px 30px rgba(2,6,23,.08);
+      }
+      .hero::before{opacity:.08}
+    }
+    *{box-sizing:border-box}
+    html,body{height:100%}
+    body{
+      margin:0; font-family:Inter, system-ui, -apple-system, Segoe UI, Roboto, Ubuntu, Cantarell, Noto Sans, sans-serif;
+      background:radial-gradient(1200px 800px at 80% -20%, rgba(34,211,238,.15), transparent 40%),
+                 radial-gradient(1000px 600px at -10% -30%, rgba(139,92,246,.18), transparent 40%), var(--bg);
+      color:var(--text); line-height:1.65;
+    }
+    a{color:inherit}
+    .container{max-width:1100px; margin-inline:auto; padding:0 20px}
+    .nav{
+      position:sticky; top:0; z-index:50; backdrop-filter:saturate(1.2) blur(10px);
+      background:color-mix(in oklab, var(--bg) 85%, transparent);
+      border-bottom:1px solid color-mix(in oklab, var(--muted) 25%, transparent);
+    }
+    .nav-inner{display:flex; gap:16px; align-items:center; justify-content:space-between; padding:10px 0}
+    .nav a.logo{display:flex; gap:10px; align-items:center; font-weight:800; text-decoration:none}
+    .nav .links{display:flex; gap:12px; flex-wrap:wrap}
+    .chip{display:inline-flex; align-items:center; gap:8px; padding:8px 12px; border-radius:999px; background:var(--panel); border:1px solid color-mix(in oklab, var(--muted) 25%, transparent); box-shadow:var(--shadow)}
+    .btn{display:inline-flex; align-items:center; gap:8px; padding:10px 14px; border-radius:12px; border:1px solid color-mix(in oklab, var(--muted) 25%, transparent); background:linear-gradient(135deg, color-mix(in oklab, var(--panel) 86%, transparent), color-mix(in oklab, var(--panel) 100%, transparent)); box-shadow:var(--shadow); text-decoration:none; font-weight:600}
+    .btn:hover{outline:2px solid var(--ring)}
+    .btn.ghost{background:transparent}
+    .btn.primary{background:linear-gradient(135deg, color-mix(in oklab, var(--brand) 45%, var(--panel)), color-mix(in oklab, var(--brand-2) 35%, var(--panel))); border-color:transparent}
+    .grid{display:grid; gap:18px}
+    .hero{position:relative; padding:48px 0 24px}
+    .hero::before{content:""; position:absolute; inset:-20px 0 0; background:radial-gradient(600px 240px at 30% 0%, rgba(139,92,246,.25), transparent 60%); opacity:.12; pointer-events:none}
+    .hero .row{display:grid; grid-template-columns:1.15fr .85fr; gap:28px}
+    .card{background:var(--panel); border:1px solid color-mix(in oklab, var(--muted) 22%, transparent); border-radius:18px; padding:20px; box-shadow:var(--shadow)}
+    .card h3{margin:0 0 8px}
+    .muted{color:var(--muted)}
+    .section{padding:24px 0}
+    .section h2{font-size:24px; margin:0 0 12px}
+    .kbd{font-family:ui-monospace, SFMono-Regular, Menlo, Consolas, "Liberation Mono", monospace; font-size:.9em; background:color-mix(in oklab, var(--muted) 15%, transparent); padding:.1em .45em; border-radius:6px}
+    .list{display:grid; gap:12px}
+    .item{display:grid; gap:6px}
+    .when{font-weight:600; letter-spacing:.2px}
+    .tags{display:flex; gap:8px; flex-wrap:wrap}
+    .tag{padding:6px 10px; border:1px solid color-mix(in oklab, var(--muted) 25%, transparent); border-radius:999px; font-weight:600; font-size:.85rem}
+    .cols-2{display:grid; grid-template-columns:repeat(2, minmax(0,1fr)); gap:18px}
+    .project{display:grid; grid-template-columns:1fr; gap:10px}
+    .project .title{font-weight:700}
+    .project .meta{display:flex; justify-content:space-between; align-items:center; gap:10px}
+    .footer{padding:26px 0 40px; color:var(--muted)}
+    .avatar{width:112px; height:112px; border-radius:20px; object-fit:cover; border:1px solid color-mix(in oklab, var(--muted) 25%, transparent); box-shadow:var(--shadow)}
+    .sr-only{position:absolute;left:-10000px;top:auto;width:1px;height:1px;overflow:hidden}
+    .tools{display:flex; gap:10px; flex-wrap:wrap}
+    .tools .btn{padding:8px 12px}
+    .social{display:flex; gap:12px; flex-wrap:wrap}
+    .timeline{display:grid; gap:14px}
+    .timeline .row{display:grid; grid-template-columns:120px 1fr; gap:14px}
+    .spacer{height:12px}
+    @media (max-width: 900px){
+      .hero .row{grid-template-columns:1fr}
+      .cols-2{grid-template-columns:1fr}
+      .timeline .row{grid-template-columns:1fr}
+    }
+    /* Print for PDF */
+    @media print{
+      body{background:#fff; color:#000}
+      .nav, .tools, .btn.primary, .btn.ghost{display:none !important}
+      .card{box-shadow:none; border-color:#ddd}
+      a{color:#000; text-decoration:none}
+    }
+  </style>
 </head>
 <body>
-  <div class="container">
-    <!-- Header -->
-    <header class="header" aria-label="Hồ sơ">
-      <picture>
-        <source srcset="avatar.jpg" />
-        <img class="avatar" src="https://scontent.fdad3-1.fna.fbcdn.net/v/t39.30808-6/489823411_2079707919211111_163668720861316378_n.jpg?_nc_cat=111&ccb=1-7&_nc_sid=a5f93a&_nc_eui2=AeHWQ8ZlQ7gafQIBHmFTOJAcQd5w0u9lhW5B3nDS72WFblp12-_FxwBa-F-oRhnscjiLtwRRScvzo1-_En5Th9Xp&_nc_ohc=syWQvJ7GtDQQ7kNvwGnaFye&_nc_oc=AdkYzOMnSNjvppCo6ZJxRThgKdkeqYo1keR6KFFV33pvXPbXXovIRtWGfAxhVLPErLM&_nc_zt=23&_nc_ht=scontent.fdad3-1.fna&_nc_gid=izgmepELypjP_kgA1J4bnQ&oh=00_AfXtPp9ndFgETzDDaK6qBrdtIyPtHKw3PC5pFwhlwyFFiQ&oe=68AC6312" alt="Ảnh đại diện Phan Văn Tiến" loading="eager" decoding="async">
-      </picture>
+  <header class="nav">
+    <div class="container nav-inner">
+      <a class="logo" href="#top" aria-label="Trang chủ">
+        <svg width="24" height="24" viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M3 6h18v3H3zM3 11h12v3H3zM3 16h18v3H3z"/></svg>
+        <span>tienphanv.io.vn</span>
+      </a>
+      <nav class="links" aria-label="Điều hướng chính">
+        <a class="btn ghost" href="#about">Giới thiệu</a>
+        <a class="btn ghost" href="#experience">Kinh nghiệm</a>
+        <a class="btn ghost" href="#projects">Dự án</a>
+        <a class="btn ghost" href="#skills">Kỹ năng</a>
+        <a class="btn ghost" href="#education">Học vấn</a>
+        <a class="btn ghost" href="#contact">Liên hệ</a>
+      </nav>
+      <div class="tools">
+        <button class="btn" id="themeBtn" title="Bật/Tắt giao diện sáng tối" aria-pressed="false">
+          <svg width="18" height="18" viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M12 3a1 1 0 0 1 1 1v2a1 1 0 1 1-2 0V4a1 1 0 0 1 1-1m7 9a1 1 0 0 1 1 1h2a1 1 0 1 1 0 2h-2a1 1 0 1 1-2 0 6 6 0 1 1-6-6 1 1 0 1 1 0-2 8 8 0 1 0 8 8 1 1 0 1 1-2 0a1 1 0 0 1 1-1Z"/></svg>
+          Giao diện
+        </button>
+        <a class="btn" href="#" onclick="window.print();return false;" title="In/Export PDF">
+          <svg width="18" height="18" viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M6 2h12v6H6zM6 14H4a2 2 0 0 1-2-2V9a3 3 0 0 1 3-3h14a3 3 0 0 1 3 3v3a2 2 0 0 1-2 2h-2v6H6z"/></svg>
+          Tải PDF
+        </a>
+      </div>
+    </div>
+  </header>
 
-      <div>
-        <div style="display:flex;gap:12px;align-items:flex-start;">
-          <div style="flex:1;">
-            <h1>Phan Văn Tiến</h1>
-            <div class="role">Software Engineer · Full-stack Developer</div>
-            <div class="contact" role="list">
-              <span class="badge" role="listitem" title="Email">
-                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M4 6h16v12H4z" stroke="currentColor" stroke-width="1.6"/><path d="m4 7 8 6 8-6" stroke="currentColor" stroke-width="1.6"/></svg>
-                <a href="mailto:2212472@dlu.edu.vn">2212472@dlu.edu.vn</a>
-              </span>
-              <span class="badge" role="listitem" title="GitHub">
-                <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 .5a12 12 0 0 0-3.79 23.4c.6.11.82-.26.82-.58 0-.29-.01-1.06-.02-2.07-3.34.73-4.04-1.61-4.04-1.61-.55-1.39-1.34-1.76-1.34-1.76-1.1-.76.08-.75.08-.75 1.22.09 1.86 1.26 1.86 1.26 1.08 1.85 2.82 1.32 3.51 1.01.11-.79.42-1.32.76-1.62-2.67-.3-5.48-1.33-5.48-5.92 0-1.31.47-2.38 1.25-3.22-.13-.31-.54-1.56.12-3.25 0 0 1.01-.32 3.3 1.23a11.4 11.4 0 0 1 6 0c2.29-1.55 3.3-1.23 3.3-1.23.66 1.69.25 2.94.12 3.25.78.84 1.25 1.91 1.25 3.22 0 4.6-2.81 5.61-5.49 5.92.43.37.81 1.1.81 2.22 0 1.6-.02 2.88-.02 3.27 0 .32.22.7.83.58A12 12 0 0 0 12 .5Z"/></svg>
-                <a href="https://github.com/teddy3704" target="_blank" rel="noopener">teddy3704</a>
-              </span>
-              <span class="badge" role="listitem" title="Địa điểm">
-                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M12 22s7-6.4 7-12a7 7 0 1 0-14 0c0 5.6 7 12 7 12Z" stroke="currentColor" stroke-width="1.6"/><circle cx="12" cy="10" r="3" stroke="currentColor" stroke-width="1.6"/></svg>
-                Đà Lạt, Việt Nam
-              </span>
+  <main id="top" class="container">
+    <!-- HERO -->
+    <section class="hero" aria-labelledby="name">
+      <div class="row">
+        <div class="card" style="display:grid; grid-template-columns:auto 1fr; gap:16px; align-items:center;">
+          <img class="avatar" src="https://avatars.githubusercontent.com/u/124003314?v=4" alt="Ảnh đại diện Phan Văn Tiến" loading="lazy"/>
+          <div>
+            <h1 id="name" style="font-size:clamp(28px,4vw,40px); line-height:1.2; margin:0 0 6px">Phan Văn Tiến</h1>
+            <p class="muted" style="margin:0 0 10px">Software Engineer · Full‑stack Developer — Đà Lạt, Việt Nam</p>
+            <div class="social">
+              <a class="chip" href="mailto:2212472@dlu.edu.vn" title="Gửi email">📧 2212472@dlu.edu.vn</a>
+              <a class="chip" href="https://github.com/teddy3704" target="_blank" rel="noopener">🐙 github.com/teddy3704</a>
+              <span class="chip" title="Có thể thay bằng QR Zalo">💬 Zalo: <span class="muted">(thêm QR nếu cần)</span></span>
             </div>
           </div>
-          <div class="toolbar" aria-label="Tiện ích">
-            <button class="btn" onclick="toggleTheme()" title="Đổi giao diện">🌓 Giao diện</button>
-            <button class="btn" onclick="window.print()" title="Tải PDF">📄 Tải PDF</button>
+        </div>
+        <div class="card">
+          <h3 style="margin-top:0">Tóm tắt</h3>
+          <p>
+            Sinh viên Công nghệ phần mềm định hướng Full‑stack. Kinh nghiệm với Node.js/Express, cơ sở dữ liệu SQLite/SQL Server,
+            và triển khai site tĩnh bằng GitHub Pages. Quan tâm Kiểm thử phần mềm (Security, Unit/Integration) và tối ưu UX.
+          </p>
+          <div class="tags" aria-label="Kỹ năng nhanh">
+            <span class="tag">JavaScript</span>
+            <span class="tag">Node.js</span>
+            <span class="tag">Express</span>
+            <span class="tag">SQL / SQLite</span>
+            <span class="tag">Git & GitHub</span>
+            <span class="tag">Software Testing</span>
           </div>
         </div>
       </div>
-    </header>
+    </section>
 
-    <main class="grid">
-      <!-- Left -->
-      <div class="col">
-        <section class="card">
-          <h2 class="section-title">Tóm tắt</h2>
-          <p>Sinh viên Công nghệ phần mềm định hướng Full-stack. Kinh nghiệm với <strong>Node.js/Express</strong>, cơ sở dữ liệu <strong>SQLite/SQL Server</strong>, và triển khai site tĩnh bằng <strong>GitHub Pages</strong>. Quan tâm đặc biệt tới <strong>Kiểm thử phần mềm</strong> (Security, Unit/Integration) và tối ưu trải nghiệm người dùng.</p>
-        </section>
-
-        <!-- Kinh nghiệm (timeline đẹp) -->
-        <section class="card">
-          <h2 class="section-title">Kinh nghiệm</h2>
-          <div class="xp" aria-label="Timeline kinh nghiệm">
-            <!-- Item 1 -->
-            <div class="xp-item">
-              <span class="xp-dot" aria-hidden="true"></span>
-              <div class="xp-logo" aria-hidden="true">
-                <!-- icon app -->
-                <svg width="26" height="26" viewBox="0 0 24 24" fill="none">
-                  <rect x="3" y="3" width="18" height="18" rx="4" stroke="currentColor" opacity=".6"/>
-                  <path d="M7 8h10M7 12h10M7 16h6" stroke="currentColor"/>
-                </svg>
-              </div>
-              <div>
-                <h3 class="xp-title">Easy Food — Web & Android (đồ án nhóm)</h3>
-                <div class="xp-meta">
-                  <span class="pill">01/2025 – 06/2025</span>
-                  <span class="pill">Back-end · Mobile</span>
-                </div>
-                <p class="xp-desc">Thiết kế và triển khai hệ thống đặt đồ ăn: API, DB, kiểm thử, CI cơ bản.</p>
-                <ul>
-                  <li>Thiết kế REST API, xác thực JWT, chuẩn hoá schema DB & migration.</li>
-                  <li>Tự động hoá kiểm thử API bằng Postman Collection + Newman.</li>
-                  <li>Thiết lập CI với GitHub Actions (build & test).</li>
-                </ul>
-                <div class="tech">
-                  <span class="chip">Node.js</span><span class="chip">Express</span>
-                  <span class="chip">SQLite</span><span class="chip">Android (Java)</span>
-                  <span class="chip">JWT</span>
-                </div>
-              </div>
-            </div>
-
-            <!-- Item 2 -->
-            <div class="xp-item">
-              <span class="xp-dot" aria-hidden="true"></span>
-              <div class="xp-logo" aria-hidden="true">
-                <!-- icon server -->
-                <svg width="26" height="26" viewBox="0 0 24 24" fill="none">
-                  <rect x="3" y="4" width="18" height="7" rx="2" stroke="currentColor" opacity=".6"/>
-                  <rect x="3" y="13" width="18" height="7" rx="2" stroke="currentColor" opacity=".6"/>
-                  <circle cx="8" cy="7.5" r="1" fill="currentColor"/>
-                  <circle cx="8" cy="16.5" r="1" fill="currentColor"/>
-                </svg>
-              </div>
-              <div>
-                <h3 class="xp-title">Web nâng cao — Client/Server Labs</h3>
-                <div class="xp-meta">
-                  <span class="pill">2025</span>
-                  <span class="pill">Networking · Server</span>
-                </div>
-                <p class="xp-desc">Xây dựng server HTTP tối giản, logging, middleware và phân tích network trace.</p>
-                <ul>
-                  <li>Phục vụ static/dynamic content; mô phỏng vòng đời request–response.</li>
-                  <li>Áp dụng kiểm thử bảo mật cơ bản: rate-limit, input validation.</li>
-                </ul>
-                <div class="tech">
-                  <span class="chip">HTTP</span><span class="chip">Middleware</span><span class="chip">Logging</span>
-                </div>
-              </div>
-            </div>
-          </div>
-        </section>
-
-        <section class="card">
-          <h2 class="section-title">Dự án nổi bật</h2>
-          <div class="chips" style="margin-bottom:10px">
-            <a class="chip" href="https://tienphanv.io.vn" target="_blank" rel="noopener">Personal CV Website</a>
-            <span class="chip">SEO</span><span class="chip">GitHub Pages</span>
-          </div>
-          <p>Site tĩnh triển khai bằng GitHub Pages, domain riêng, tối ưu SEO & in PDF.</p>
-        </section>
-      </div>
-
-      <!-- Right -->
-      <aside class="col" aria-label="Thông tin nhanh">
-        <section class="card">
-          <h2 class="section-title">Kỹ năng chính</h2>
-          <div class="chips">
-            <span class="chip">JavaScript</span><span class="chip">Node.js</span><span class="chip">Express</span>
-            <span class="chip">SQL / SQLite</span><span class="chip">Android (Java)</span>
-            <span class="chip">Git / GitHub</span><span class="chip">Software Testing</span>
-          </div>
-        </section>
-
-        <section class="card">
-          <h2 class="section-title">Ngôn ngữ</h2>
-          <div>
-            <div class="lang"><span>Tiếng Việt</span><span>Native</span></div>
-            <div class="bar"><span style="width:100%"></span></div>
-          </div>
-          <div style="margin-top:10px">
-            <div class="lang"><span>English</span><span>B1–B2</span></div>
-            <div class="bar"><span style="width:65%"></span></div>
-          </div>
-        </section>
-
-        <section class="card">
-          <h2 class="section-title">Học vấn</h2>
-          <p><strong>ĐH Đà Lạt</strong> — Công nghệ phần mềm<br/>2022 – nay</p>
-          <ul style="margin-top:6px">
-            <li>Nhóm môn Kiểm thử phần mềm, Thiết kế Web nâng cao.</li>
-            <li>Thành viên dự án Easy Food (Back-end).</li>
+    <!-- EXPERIENCE -->
+    <section id="experience" class="section" aria-labelledby="exp-title">
+      <h2 id="exp-title">Kinh nghiệm</h2>
+      <div class="grid cols-2">
+        <article class="card item">
+          <div class="when">01/2025 – 06/2025 · Back‑end · Mobile</div>
+          <div class="title" style="font-weight:700">Easy Food — Web & Android (đồ án nhóm)</div>
+          <ul class="muted" style="margin:6px 0 0 18px">
+            <li>Thiết kế REST API, xác thực JWT, chuẩn hoá schema DB & migration.</li>
+            <li>Tự động hoá kiểm thử API: Postman Collection + Newman.</li>
+            <li>Thiết lập CI với GitHub Actions (build & test).</li>
           </ul>
-        </section>
+          <div class="tags"><span class="tag">Node.js</span><span class="tag">Express</span><span class="tag">SQLite</span><span class="tag">Android (Java)</span><span class="tag">JWT</span></div>
+        </article>
+        <article class="card item">
+          <div class="when">2025 · Networking · Server</div>
+          <div class="title" style="font-weight:700">Web nâng cao — Client/Server Labs</div>
+          <ul class="muted" style="margin:6px 0 0 18px">
+            <li>Phục vụ static/dynamic content; mô phỏng vòng đời request–response.</li>
+            <li>Áp dụng kiểm thử bảo mật: rate‑limit, input validation.</li>
+          </ul>
+          <div class="tags"><span class="tag">HTTP</span><span class="tag">Middleware</span><span class="tag">Logging</span></div>
+        </article>
+      </div>
+    </section>
 
-        <section class="card">
-          <h2 class="section-title">Liên hệ</h2>
-          <p>📧 <a href="mailto:2212472@dlu.edu.vn">2212472@dlu.edu.vn</a><br/>
-             🔗 <a href="https://github.com/teddy3704" target="_blank" rel="noopener">github.com/teddy3704</a>
-          </p>
-        </section>
-      </aside>
-    </main>
+    <!-- PROJECTS -->
+    <section id="projects" class="section" aria-labelledby="proj-title">
+      <h2 id="proj-title">Dự án nổi bật</h2>
+      <div class="grid cols-2">
+        <article class="card project">
+          <div class="meta">
+            <span class="title">Personal CV Website</span>
+            <a class="btn" href="https://tienphanv.io.vn" target="_blank" rel="noopener">Xem Live</a>
+          </div>
+          <p class="muted">Site tĩnh triển khai bằng GitHub Pages, domain riêng, tối ưu SEO & in PDF.</p>
+          <div class="tags"><span class="tag">SEO</span><span class="tag">GitHub Pages</span><span class="tag">HTML/CSS</span></div>
+        </article>
+        <article class="card project">
+          <div class="meta">
+            <span class="title">Easy Food API</span>
+            <a class="btn" href="#" aria-disabled="true">Repo riêng tư</a>
+          </div>
+          <p class="muted">API đặt đồ ăn: JWT auth, migration, CI test với Newman.</p>
+          <div class="tags"><span class="tag">Node.js</span><span class="tag">Express</span><span class="tag">SQLite</span><span class="tag">JWT</span></div>
+        </article>
+      </div>
+    </section>
 
-    <footer>© <span id="y"></span> Phan Văn Tiến — Built with GitHub Pages</footer>
-  </div>
+    <!-- SKILLS -->
+    <section id="skills" class="section" aria-labelledby="skills-title">
+      <h2 id="skills-title">Kỹ năng chính</h2>
+      <div class="card">
+        <div class="tags">
+          <span class="tag">JavaScript</span>
+          <span class="tag">TypeScript (cơ bản)</span>
+          <span class="tag">Node.js</span>
+          <span class="tag">Express</span>
+          <span class="tag">REST API</span>
+          <span class="tag">SQL / SQLite / SQL Server</span>
+          <span class="tag">Git / GitHub</span>
+          <span class="tag">Unit/Integration Testing</span>
+          <span class="tag">Postman / Newman</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- EDUCATION -->
+    <section id="education" class="section" aria-labelledby="edu-title">
+      <h2 id="edu-title">Học vấn</h2>
+      <div class="card timeline">
+        <div class="row">
+          <div class="when">2022 – nay</div>
+          <div>
+            <div style="font-weight:700">Đại học Đà Lạt — Công nghệ phần mềm</div>
+            <div class="muted">Các môn nổi bật: Kiểm thử phần mềm, Phát triển Web nâng cao. Thành viên dự án "Easy Food" (Back‑end).</n></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- CONTACT -->
+    <section id="contact" class="section" aria-labelledby="contact-title">
+      <h2 id="contact-title">Liên hệ</h2>
+      <div class="grid cols-2">
+        <div class="card">
+          <p class="muted">Ưu tiên trao đổi qua email hoặc GitHub. Có thể thêm QR Zalo để liên hệ nhanh.</p>
+          <div class="list">
+            <div class="item"><strong>Email:</strong> <a href="mailto:2212472@dlu.edu.vn">2212472@dlu.edu.vn</a></div>
+            <div class="item"><strong>GitHub:</strong> <a href="https://github.com/teddy3704" target="_blank" rel="noopener">github.com/teddy3704</a></div>
+            <div class="item"><strong>Địa điểm:</strong> Đà Lạt, Việt Nam</div>
+          </div>
+          <div class="spacer"></div>
+          <div class="tools">
+            <a class="btn primary" href="#" onclick="window.print();return false;">In/Export PDF</a>
+            <a class="btn" href="#about">Lên đầu trang</a>
+          </div>
+        </div>
+        <form class="card" method="POST" action="https://formspree.io/f/your-id" onsubmit="this.querySelector('button[type=submit]').disabled=true">
+          <h3 style="margin:0 0 8px">Gửi lời nhắn</h3>
+          <p class="muted" style="margin:0 0 12px">Form hoạt động qua Formspree (điền <span class="kbd">your-id</span> của bạn).</p>
+          <label class="sr-only" for="name">Tên</label>
+          <input id="name" name="name" required placeholder="Tên của bạn" style="width:100%;padding:12px;border-radius:12px;border:1px solid color-mix(in oklab, var(--muted) 25%, transparent);background:var(--panel);color:var(--text)" />
+          <div style="height:10px"></div>
+          <label class="sr-only" for="email">Email</label>
+          <input id="email" name="email" type="email" required placeholder="Email" style="width:100%;padding:12px;border-radius:12px;border:1px solid color-mix(in oklab, var(--muted) 25%, transparent);background:var(--panel);color:var(--text)" />
+          <div style="height:10px"></div>
+          <label class="sr-only" for="message">Nội dung</label>
+          <textarea id="message" name="message" required rows="5" placeholder="Nội dung" style="width:100%;padding:12px;border-radius:12px;border:1px solid color-mix(in oklab, var(--muted) 25%, transparent);background:var(--panel);color:var(--text)"></textarea>
+          <div style="height:12px"></div>
+          <button type="submit" class="btn primary">Gửi</button>
+        </form>
+      </div>
+    </section>
+
+    <section class="footer">
+      <div class="container" style="display:flex; justify-content:space-between; flex-wrap:wrap; gap:10px">
+        <div>© <span id="y"></span> Phan Văn Tiến. Made with ❤ · <a class="muted" href="https://tienphanv.io.vn">tienphanv.io.vn</a></div>
+        <div class="muted">Lấy cảm hứng từ phong cách tối giản (minimal) của trang CV thầy Hiếu.</div>
+      </div>
+    </section>
+  </main>
 
   <script>
-    document.getElementById('y').textContent = new Date().getFullYear();
-    function setTheme(t){ document.documentElement.setAttribute('data-theme', t); localStorage.setItem('theme', t); }
-    function toggleTheme(){
-      const cur = localStorage.getItem('theme');
-      if(cur === 'dark') setTheme('light');
-      else if(cur === 'light') setTheme('dark');
-      else setTheme(matchMedia('(prefers-color-scheme: dark)').matches ? 'light' : 'dark');
-    }
-    const saved = localStorage.getItem('theme'); if(saved) setTheme(saved);
+    // Scroll to hash with smooth behavior
+    document.querySelectorAll('a[href^="#"]').forEach(a=>{
+      a.addEventListener('click', e=>{
+        const id=a.getAttribute('href'); if(id==="#"||id==="") return;
+        const el=document.querySelector(id); if(!el) return;
+        e.preventDefault(); el.scrollIntoView({behavior:'smooth', block:'start'});
+        history.pushState(null, '', id);
+      });
+    });
+
+    // Theme toggle
+    const themeBtn=document.getElementById('themeBtn');
+    const prefersDark=window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches;
+    const saved=localStorage.getItem('theme');
+    if(saved==='light') document.documentElement.style.colorScheme='light';
+    if(saved==='dark' || (!saved && prefersDark)) document.documentElement.style.colorScheme='dark';
+    themeBtn?.addEventListener('click',()=>{
+      const cs=getComputedStyle(document.documentElement).colorScheme;
+      const next= cs==='dark' ? 'light' : 'dark';
+      document.documentElement.style.colorScheme=next; localStorage.setItem('theme', next);
+      themeBtn.setAttribute('aria-pressed', next==='dark');
+    });
+
+    // Current year
+    document.getElementById('y').textContent=new Date().getFullYear();
   </script>
 </body>
 </html>
