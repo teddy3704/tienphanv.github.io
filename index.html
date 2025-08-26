@@ -1,332 +1,394 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="vi">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Phan Văn Tiến — CV / Portfolio</title>
-  <meta name="description" content="CV cá nhân của Phan Văn Tiến — Software Engineer / Full‑stack Developer tại Đà Lạt, Việt Nam." />
-  <meta name="author" content="Phan Văn Tiến" />
-  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='6' fill='%231a1b26'/%3E%3Cpath fill='%23fff' d='M6 22h7.2c3.6 0 6-2.4 6-5.6S16.8 11 13.2 11H8V8h13v3h-2.8c2.6 1.1 4.3 3.4 4.3 6.2 0 4.3-3.7 7.8-9.3 7.8H6z'/%3E%3C/svg%3E" />
-  <meta property="og:title" content="Phan Văn Tiến — CV / Portfolio" />
-  <meta property="og:description" content="Software Engineer · Full‑stack Developer tại Đà Lạt, Việt Nam." />
-  <meta property="og:type" content="website" />
-  <meta property="og:url" content="https://tienphanv.io.vn/" />
-  <meta property="og:image" content="/assets/cover.jpg" />
-  <meta name="twitter:card" content="summary_large_image" />
-  <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@type": "Person",
-    "name": "Phan Văn Tiến",
-    "url": "https://tienphanv.io.vn/",
-    "email": "mailto:2212472@dlu.edu.vn",
-    "jobTitle": "Software Engineer",
-    "address": {
-      "@type": "PostalAddress",
-      "addressLocality": "Đà Lạt",
-      "addressRegion": "Lâm Đồng",
-      "addressCountry": "VN"
-    },
-    "sameAs": [
-      "https://github.com/teddy3704"
-    ]
-  }
-  </script>
-  <link rel="preconnect" href="https://fonts.googleapis.com"/>
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Phan Văn Tiến - CV</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
   <style>
-    :root{
-      --bg: #0b0e14; /* base */
-      --panel: #121826; /* card */
-      --muted: #94a3b8; /* slate-400 */
-      --text: #e5e7eb; /* gray-200 */
-      --brand: #8b5cf6; /* violet-500 */
-      --brand-2: #22d3ee; /* cyan-400 */
-      --ring: rgba(139,92,246,0.35);
-      --shadow: 0 10px 30px rgba(0,0,0,.25);
+    :root {
+      --bg-color: #ffffff;
+      --text-color: #333333;
+      --primary-color: #3b82f6;
+      --secondary-color: #a855f7;
+      --section-bg: #ffffff;
+      --section-bg-alt: #f9fafb;
+      --border-color: #cccccc;
+      --hero-gradient: linear-gradient(135deg, #a855f7, #3b82f6);
+      --primary-hover: #2563eb;
     }
-    @media (prefers-color-scheme: light){
-      :root{
-        --bg:#f8fafc; --panel:#ffffff; --muted:#64748b; --text:#0f172a; --shadow:0 10px 30px rgba(2,6,23,.08);
+    .dark {
+      --bg-color: #121212;
+      --text-color: #e5e5e5;
+      --primary-color: #90cdf4;
+      --secondary-color: #d8b4fe;
+      --section-bg: #1e1e1e;
+      --section-bg-alt: #2c2c2c;
+      --border-color: #555555;
+      --hero-gradient: linear-gradient(135deg, #3f3cbb, #0f172a);
+      --primary-hover: #63b3ed;
+    }
+    * {
+      box-sizing: border-box;
+    }
+    body {
+      margin: 0;
+      font-family: 'Inter', sans-serif;
+      background: var(--bg-color);
+      color: var(--text-color);
+      line-height: 1.6;
+    }
+    a {
+      color: var(--primary-color);
+      text-decoration: none;
+    }
+    a:hover {
+      text-decoration: underline;
+    }
+    /* Hero section */
+    .hero {
+      background: var(--hero-gradient);
+      color: #ffffff;
+      padding: 80px 0;
+    }
+    .hero a {
+      color: #ffffff;
+      text-decoration: none;
+    }
+    .hero a:hover {
+      text-decoration: underline;
+    }
+    .hero-content {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      justify-content: center;
+      gap: 20px;
+      text-align: center;
+    }
+    .hero-content .intro-text {
+      max-width: 500px;
+      text-align: left;
+    }
+    .avatar {
+      width: 150px;
+      border-radius: 50%;
+      border: 4px solid #ffffff;
+    }
+    .hero h1 {
+      font-size: 2.5em;
+      font-weight: 700;
+      margin: 0;
+    }
+    .hero h2 {
+      font-size: 1.5em;
+      font-weight: 600;
+      margin: 5px 0 15px;
+    }
+    .contact-info {
+      font-size: 0.9em;
+      margin-bottom: 20px;
+    }
+    .contact-info i {
+      margin-right: 5px;
+    }
+    .contact-info a {
+      color: inherit;
+    }
+    /* Sections */
+    .container {
+      max-width: 900px;
+      margin: 0 auto;
+      padding: 0 20px;
+    }
+    .section {
+      padding: 60px 0;
+      background: var(--section-bg);
+    }
+    .alt-section {
+      background: var(--section-bg-alt);
+    }
+    .section h3 {
+      font-size: 1.5em;
+      font-weight: 600;
+      color: var(--primary-color);
+      margin-bottom: 20px;
+      text-align: left;
+    }
+    /* Skills */
+    .skills-container {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 20px;
+    }
+    .skill-card {
+      padding: 20px;
+      border-radius: 8px;
+      background: #ffffff;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+      transition: transform 0.3s, box-shadow 0.3s;
+      text-align: center;
+    }
+    .skill-card i {
+      font-size: 1.5em;
+      color: var(--primary-color);
+    }
+    .skill-card h4 {
+      margin: 10px 0 5px;
+      font-weight: 600;
+    }
+    .skill-card p {
+      margin: 0;
+      font-size: 0.95em;
+    }
+    .skill-card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+    }
+    .dark .skill-card {
+      background: #2c2c2c;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.4);
+      border: 1px solid #444444;
+    }
+    .dark .skill-card:hover {
+      box-shadow: 0 5px 15px rgba(0,0,0,0.6);
+    }
+    /* Projects */
+    .project-item h4 {
+      font-weight: 600;
+      margin: 10px 0 5px;
+    }
+    .project-item p {
+      margin: 0 0 20px;
+    }
+    .project-item:not(:last-child) {
+      margin-bottom: 20px;
+    }
+    /* Contact form */
+    .contact-form {
+      max-width: 600px;
+      margin: 0 auto;
+    }
+    .form-fields-top {
+      display: flex;
+      gap: 20px;
+      flex-wrap: wrap;
+      margin-bottom: 15px;
+    }
+    .field-group {
+      display: flex;
+      flex-direction: column;
+      flex: 1;
+      min-width: 200px;
+    }
+    .message-group {
+      margin-bottom: 15px;
+    }
+    label {
+      margin-bottom: 5px;
+      font-weight: 600;
+    }
+    input, textarea {
+      padding: 10px;
+      border: 1px solid var(--border-color);
+      border-radius: 4px;
+      background: var(--section-bg-alt);
+      color: var(--text-color);
+      font-family: inherit;
+      font-size: 1em;
+    }
+    input:focus, textarea:focus {
+      outline: none;
+      border-color: var(--primary-color);
+      box-shadow: 0 0 0 3px rgba(59,130,246,0.2);
+    }
+    button[type=submit] {
+      background: var(--primary-color);
+      color: #ffffff;
+      font-size: 1em;
+      font-family: inherit;
+      padding: 10px 30px;
+      border: none;
+      border-radius: 4px;
+      cursor: pointer;
+      transition: background 0.3s;
+    }
+    button[type=submit]:hover {
+      background: var(--primary-hover);
+    }
+    /* Theme toggle button */
+    .theme-toggle {
+      position: fixed;
+      top: 15px;
+      right: 15px;
+      background: none;
+      border: none;
+      font-size: 1.2em;
+      cursor: pointer;
+      z-index: 1000;
+      color: #333333;
+    }
+    .dark .theme-toggle {
+      color: #ffffff;
+    }
+    /* Fade-in animation */
+    .fade-in {
+      opacity: 0;
+      transform: translateY(20px);
+      transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+    }
+    .fade-in.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+    /* Print styles */
+    @media print {
+      body, .hero, .section, .alt-section {
+        background: #ffffff !important;
+        color: #000000 !important;
       }
-      .hero::before{opacity:.08}
-    }
-    *{box-sizing:border-box}
-    html,body{height:100%}
-    body{
-      margin:0; font-family:Inter, system-ui, -apple-system, Segoe UI, Roboto, Ubuntu, Cantarell, Noto Sans, sans-serif;
-      background:radial-gradient(1200px 800px at 80% -20%, rgba(34,211,238,.15), transparent 40%),
-                 radial-gradient(1000px 600px at -10% -30%, rgba(139,92,246,.18), transparent 40%), var(--bg);
-      color:var(--text); line-height:1.65;
-    }
-    a{color:inherit}
-    .container{max-width:1100px; margin-inline:auto; padding:0 20px}
-    .nav{
-      position:sticky; top:0; z-index:50; backdrop-filter:saturate(1.2) blur(10px);
-      background:color-mix(in oklab, var(--bg) 85%, transparent);
-      border-bottom:1px solid color-mix(in oklab, var(--muted) 25%, transparent);
-    }
-    .nav-inner{display:flex; gap:16px; align-items:center; justify-content:space-between; padding:10px 0}
-    .nav a.logo{display:flex; gap:10px; align-items:center; font-weight:800; text-decoration:none}
-    .nav .links{display:flex; gap:12px; flex-wrap:wrap}
-    .chip{display:inline-flex; align-items:center; gap:8px; padding:8px 12px; border-radius:999px; background:var(--panel); border:1px solid color-mix(in oklab, var(--muted) 25%, transparent); box-shadow:var(--shadow)}
-    .btn{display:inline-flex; align-items:center; gap:8px; padding:10px 14px; border-radius:12px; border:1px solid color-mix(in oklab, var(--muted) 25%, transparent); background:linear-gradient(135deg, color-mix(in oklab, var(--panel) 86%, transparent), color-mix(in oklab, var(--panel) 100%, transparent)); box-shadow:var(--shadow); text-decoration:none; font-weight:600}
-    .btn:hover{outline:2px solid var(--ring)}
-    .btn.ghost{background:transparent}
-    .btn.primary{background:linear-gradient(135deg, color-mix(in oklab, var(--brand) 45%, var(--panel)), color-mix(in oklab, var(--brand-2) 35%, var(--panel))); border-color:transparent}
-    .grid{display:grid; gap:18px}
-    .hero{position:relative; padding:48px 0 24px}
-    .hero::before{content:""; position:absolute; inset:-20px 0 0; background:radial-gradient(600px 240px at 30% 0%, rgba(139,92,246,.25), transparent 60%); opacity:.12; pointer-events:none}
-    .hero .row{display:grid; grid-template-columns:1.15fr .85fr; gap:28px}
-    .card{background:var(--panel); border:1px solid color-mix(in oklab, var(--muted) 22%, transparent); border-radius:18px; padding:20px; box-shadow:var(--shadow)}
-    .card h3{margin:0 0 8px}
-    .muted{color:var(--muted)}
-    .section{padding:24px 0}
-    .section h2{font-size:24px; margin:0 0 12px}
-    .kbd{font-family:ui-monospace, SFMono-Regular, Menlo, Consolas, "Liberation Mono", monospace; font-size:.9em; background:color-mix(in oklab, var(--muted) 15%, transparent); padding:.1em .45em; border-radius:6px}
-    .list{display:grid; gap:12px}
-    .item{display:grid; gap:6px}
-    .when{font-weight:600; letter-spacing:.2px}
-    .tags{display:flex; gap:8px; flex-wrap:wrap}
-    .tag{padding:6px 10px; border:1px solid color-mix(in oklab, var(--muted) 25%, transparent); border-radius:999px; font-weight:600; font-size:.85rem}
-    .cols-2{display:grid; grid-template-columns:repeat(2, minmax(0,1fr)); gap:18px}
-    .project{display:grid; grid-template-columns:1fr; gap:10px}
-    .project .title{font-weight:700}
-    .project .meta{display:flex; justify-content:space-between; align-items:center; gap:10px}
-    .footer{padding:26px 0 40px; color:var(--muted)}
-    .avatar{width:112px; height:112px; border-radius:20px; object-fit:cover; border:1px solid color-mix(in oklab, var(--muted) 25%, transparent); box-shadow:var(--shadow)}
-    .sr-only{position:absolute;left:-10000px;top:auto;width:1px;height:1px;overflow:hidden}
-    .tools{display:flex; gap:10px; flex-wrap:wrap}
-    .tools .btn{padding:8px 12px}
-    .social{display:flex; gap:12px; flex-wrap:wrap}
-    .timeline{display:grid; gap:14px}
-    .timeline .row{display:grid; grid-template-columns:120px 1fr; gap:14px}
-    .spacer{height:12px}
-    @media (max-width: 900px){
-      .hero .row{grid-template-columns:1fr}
-      .cols-2{grid-template-columns:1fr}
-      .timeline .row{grid-template-columns:1fr}
-    }
-    /* Print for PDF */
-    @media print{
-      body{background:#fff; color:#000}
-      .nav, .tools, .btn.primary, .btn.ghost{display:none !important}
-      .card{box-shadow:none; border-color:#ddd}
-      a{color:#000; text-decoration:none}
+      .hero {
+        padding: 20px 0 !important;
+      }
+      .section {
+        padding: 20px 0 !important;
+      }
+      .theme-toggle {
+        display: none !important;
+      }
+      .skill-card, .contact-form input, .contact-form textarea, .contact-form button {
+        background: #ffffff !important;
+        color: #000000 !important;
+        box-shadow: none !important;
+        border: 1px solid #000000 !important;
+      }
+      .hero a, .contact-info a {
+        text-decoration: underline;
+        color: #000000 !important;
+      }
     }
   </style>
 </head>
 <body>
-  <header class="nav">
-    <div class="container nav-inner">
-      <a class="logo" href="#top" aria-label="Trang chủ">
-        <svg width="24" height="24" viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M3 6h18v3H3zM3 11h12v3H3zM3 16h18v3H3z"/></svg>
-        <span>tienphanv.io.vn</span>
-      </a>
-      <nav class="links" aria-label="Điều hướng chính">
-        <a class="btn ghost" href="#about">Giới thiệu</a>
-        <a class="btn ghost" href="#experience">Kinh nghiệm</a>
-        <a class="btn ghost" href="#projects">Dự án</a>
-        <a class="btn ghost" href="#skills">Kỹ năng</a>
-        <a class="btn ghost" href="#education">Học vấn</a>
-        <a class="btn ghost" href="#contact">Liên hệ</a>
-      </nav>
-      <div class="tools">
-        <button class="btn" id="themeBtn" title="Bật/Tắt giao diện sáng tối" aria-pressed="false">
-          <svg width="18" height="18" viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M12 3a1 1 0 0 1 1 1v2a1 1 0 1 1-2 0V4a1 1 0 0 1 1-1m7 9a1 1 0 0 1 1 1h2a1 1 0 1 1 0 2h-2a1 1 0 1 1-2 0 6 6 0 1 1-6-6 1 1 0 1 1 0-2 8 8 0 1 0 8 8 1 1 0 1 1-2 0a1 1 0 0 1 1-1Z"/></svg>
-          Giao diện
-        </button>
-        <a class="btn" href="#" onclick="window.print();return false;" title="In/Export PDF">
-          <svg width="18" height="18" viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M6 2h12v6H6zM6 14H4a2 2 0 0 1-2-2V9a3 3 0 0 1 3-3h14a3 3 0 0 1 3 3v3a2 2 0 0 1-2 2h-2v6H6z"/></svg>
-          Tải PDF
-        </a>
+  <button class="theme-toggle" id="theme-toggle" aria-label="Toggle dark mode"><i class="fa-solid fa-moon"></i></button>
+  <section class="hero">
+    <div class="container hero-content">
+      <img src="https://github.com/teddy3704/tienphanv.github.io/blob/main/avatar.jpg?raw=true" alt="Avatar" class="avatar" />
+      <div class="intro-text">
+        <h1>Phan Văn Tiến</h1>
+        <h2>Full‑stack Developer / Software Engineer</h2>
+        <p class="contact-info">
+          <i class="fa-solid fa-envelope"></i> <a href="mailto:2212472@dlu.edu.vn">2212472@dlu.edu.vn</a> |
+          <i class="fa-brands fa-github"></i> <a href="https://github.com/teddy3704" target="_blank" rel="noopener">teddy3704</a> |
+          <i class="fa-solid fa-location-dot"></i> Đà Lạt, Việt Nam
+        </p>
+        <p>Xin chào! Tôi là <strong>Phan Văn Tiến</strong>, sinh viên ngành CNTT với kinh nghiệm xây dựng ứng dụng web. Với kiến thức về xây dựng Web API (Express), triển khai CI/CD (GitHub Actions) và kiểm thử API (Postman), tôi luôn sẵn sàng học hỏi công nghệ mới và làm việc nhóm hiệu quả để tạo ra sản phẩm chất lượng.</p>
       </div>
     </div>
-  </header>
-
-  <main id="top" class="container">
-    <!-- HERO -->
-    <section class="hero" aria-labelledby="name">
-      <div class="row">
-        <div class="card" style="display:grid; grid-template-columns:auto 1fr; gap:16px; align-items:center;">
-          <img class="avatar" src="https://avatars.githubusercontent.com/u/124003314?v=4" alt="Ảnh đại diện Phan Văn Tiến" loading="lazy"/>
-          <div>
-            <h1 id="name" style="font-size:clamp(28px,4vw,40px); line-height:1.2; margin:0 0 6px">Phan Văn Tiến</h1>
-            <p class="muted" style="margin:0 0 10px">Software Engineer · Full‑stack Developer — Đà Lạt, Việt Nam</p>
-            <div class="social">
-              <a class="chip" href="mailto:2212472@dlu.edu.vn" title="Gửi email">📧 2212472@dlu.edu.vn</a>
-              <a class="chip" href="https://github.com/teddy3704" target="_blank" rel="noopener">🐙 github.com/teddy3704</a>
-              <span class="chip" title="Có thể thay bằng QR Zalo">💬 Zalo: <span class="muted">(thêm QR nếu cần)</span></span>
-            </div>
-          </div>
+  </section>
+  <section id="skills" class="section alt-section">
+    <div class="container">
+      <h3>Kỹ năng chính</h3>
+      <div class="skills-container fade-in">
+        <div class="skill-card">
+          <i class="fa-solid fa-server"></i>
+          <h4>Web API (Express.js)</h4>
+          <p>Xây dựng API với Express</p>
         </div>
-        <div class="card">
-          <h3 style="margin-top:0">Tóm tắt</h3>
-          <p>
-            Sinh viên Công nghệ phần mềm định hướng Full‑stack. Kinh nghiệm với Node.js/Express, cơ sở dữ liệu SQLite/SQL Server,
-            và triển khai site tĩnh bằng GitHub Pages. Quan tâm Kiểm thử phần mềm (Security, Unit/Integration) và tối ưu UX.
-          </p>
-          <div class="tags" aria-label="Kỹ năng nhanh">
-            <span class="tag">JavaScript</span>
-            <span class="tag">Node.js</span>
-            <span class="tag">Express</span>
-            <span class="tag">SQL / SQLite</span>
-            <span class="tag">Git & GitHub</span>
-            <span class="tag">Software Testing</span>
-          </div>
+        <div class="skill-card">
+          <i class="fa-solid fa-gears"></i>
+          <h4>CI/CD</h4>
+          <p>Triển khai CI/CD với GitHub Actions</p>
+        </div>
+        <div class="skill-card">
+          <i class="fa-solid fa-flask"></i>
+          <h4>Kiểm thử API</h4>
+          <p>Kiểm thử API với Postman/Newman</p>
+        </div>
+        <div class="skill-card">
+          <i class="fa-solid fa-users"></i>
+          <h4>Làm việc nhóm</h4>
+          <p>Hợp tác hiệu quả trong dự án nhóm</p>
         </div>
       </div>
-    </section>
-
-    <!-- EXPERIENCE -->
-    <section id="experience" class="section" aria-labelledby="exp-title">
-      <h2 id="exp-title">Kinh nghiệm</h2>
-      <div class="grid cols-2">
-        <article class="card item">
-          <div class="when">01/2025 – 06/2025 · Back‑end · Mobile</div>
-          <div class="title" style="font-weight:700">Easy Food — Web & Android (đồ án nhóm)</div>
-          <ul class="muted" style="margin:6px 0 0 18px">
-            <li>Thiết kế REST API, xác thực JWT, chuẩn hoá schema DB & migration.</li>
-            <li>Tự động hoá kiểm thử API: Postman Collection + Newman.</li>
-            <li>Thiết lập CI với GitHub Actions (build & test).</li>
-          </ul>
-          <div class="tags"><span class="tag">Node.js</span><span class="tag">Express</span><span class="tag">SQLite</span><span class="tag">Android (Java)</span><span class="tag">JWT</span></div>
-        </article>
-        <article class="card item">
-          <div class="when">2025 · Networking · Server</div>
-          <div class="title" style="font-weight:700">Web nâng cao — Client/Server Labs</div>
-          <ul class="muted" style="margin:6px 0 0 18px">
-            <li>Phục vụ static/dynamic content; mô phỏng vòng đời request–response.</li>
-            <li>Áp dụng kiểm thử bảo mật: rate‑limit, input validation.</li>
-          </ul>
-          <div class="tags"><span class="tag">HTTP</span><span class="tag">Middleware</span><span class="tag">Logging</span></div>
-        </article>
+    </div>
+  </section>
+  <section id="projects" class="section">
+    <div class="container fade-in">
+      <h3>Dự án tiêu biểu</h3>
+      <div class="project-item">
+        <h4>CV Cá Nhân</h4>
+        <p>Trang web CV cá nhân sử dụng HTML/CSS, triển khai trên GitHub Pages.</p>
       </div>
-    </section>
-
-    <!-- PROJECTS -->
-    <section id="projects" class="section" aria-labelledby="proj-title">
-      <h2 id="proj-title">Dự án nổi bật</h2>
-      <div class="grid cols-2">
-        <article class="card project">
-          <div class="meta">
-            <span class="title">Personal CV Website</span>
-            <a class="btn" href="https://tienphanv.io.vn" target="_blank" rel="noopener">Xem Live</a>
+      <div class="project-item">
+        <h4>EasyFood API</h4>
+        <p>API cho ứng dụng đặt đồ ăn với xác thực JWT, tích hợp CI/CD và quản lý database migration.</p>
+      </div>
+    </div>
+  </section>
+  <section id="education" class="section alt-section">
+    <div class="container fade-in">
+      <h3>Học vấn</h3>
+      <p><strong>Đại học Đà Lạt</strong> – Cử nhân Công nghệ Thông tin (2022 – nay)</p>
+    </div>
+  </section>
+  <section id="contact" class="section">
+    <div class="container fade-in">
+      <h3>Liên hệ</h3>
+      <p>Nếu bạn quan tâm, hãy gửi tin nhắn cho tôi:</p>
+      <form class="contact-form">
+        <div class="form-fields-top">
+          <div class="field-group">
+            <label for="name">Tên của bạn</label>
+            <input type="text" id="name" name="name" placeholder="Nhập tên của bạn" required>
           </div>
-          <p class="muted">Site tĩnh triển khai bằng GitHub Pages, domain riêng, tối ưu SEO & in PDF.</p>
-          <div class="tags"><span class="tag">SEO</span><span class="tag">GitHub Pages</span><span class="tag">HTML/CSS</span></div>
-        </article>
-        <article class="card project">
-          <div class="meta">
-            <span class="title">Easy Food API</span>
-            <a class="btn" href="#" aria-disabled="true">Repo riêng tư</a>
-          </div>
-          <p class="muted">API đặt đồ ăn: JWT auth, migration, CI test với Newman.</p>
-          <div class="tags"><span class="tag">Node.js</span><span class="tag">Express</span><span class="tag">SQLite</span><span class="tag">JWT</span></div>
-        </article>
-      </div>
-    </section>
-
-    <!-- SKILLS -->
-    <section id="skills" class="section" aria-labelledby="skills-title">
-      <h2 id="skills-title">Kỹ năng chính</h2>
-      <div class="card">
-        <div class="tags">
-          <span class="tag">JavaScript</span>
-          <span class="tag">TypeScript (cơ bản)</span>
-          <span class="tag">Node.js</span>
-          <span class="tag">Express</span>
-          <span class="tag">REST API</span>
-          <span class="tag">SQL / SQLite / SQL Server</span>
-          <span class="tag">Git / GitHub</span>
-          <span class="tag">Unit/Integration Testing</span>
-          <span class="tag">Postman / Newman</span>
-        </div>
-      </div>
-    </section>
-
-    <!-- EDUCATION -->
-    <section id="education" class="section" aria-labelledby="edu-title">
-      <h2 id="edu-title">Học vấn</h2>
-      <div class="card timeline">
-        <div class="row">
-          <div class="when">2022 – nay</div>
-          <div>
-            <div style="font-weight:700">Đại học Đà Lạt — Công nghệ phần mềm</div>
-            <div class="muted">Các môn nổi bật: Kiểm thử phần mềm, Phát triển Web nâng cao. Thành viên dự án "Easy Food" (Back‑end).</n></div>
-        </div>
-      </div>
-    </section>
-
-    <!-- CONTACT -->
-    <section id="contact" class="section" aria-labelledby="contact-title">
-      <h2 id="contact-title">Liên hệ</h2>
-      <div class="grid cols-2">
-        <div class="card">
-          <p class="muted">Ưu tiên trao đổi qua email hoặc GitHub. Có thể thêm QR Zalo để liên hệ nhanh.</p>
-          <div class="list">
-            <div class="item"><strong>Email:</strong> <a href="mailto:2212472@dlu.edu.vn">2212472@dlu.edu.vn</a></div>
-            <div class="item"><strong>GitHub:</strong> <a href="https://github.com/teddy3704" target="_blank" rel="noopener">github.com/teddy3704</a></div>
-            <div class="item"><strong>Địa điểm:</strong> Đà Lạt, Việt Nam</div>
-          </div>
-          <div class="spacer"></div>
-          <div class="tools">
-            <a class="btn primary" href="#" onclick="window.print();return false;">In/Export PDF</a>
-            <a class="btn" href="#about">Lên đầu trang</a>
+          <div class="field-group">
+            <label for="email">Email của bạn</label>
+            <input type="email" id="email" name="email" placeholder="Nhập email của bạn" required>
           </div>
         </div>
-        <form class="card" method="POST" action="https://formspree.io/f/your-id" onsubmit="this.querySelector('button[type=submit]').disabled=true">
-          <h3 style="margin:0 0 8px">Gửi lời nhắn</h3>
-          <p class="muted" style="margin:0 0 12px">Form hoạt động qua Formspree (điền <span class="kbd">your-id</span> của bạn).</p>
-          <label class="sr-only" for="name">Tên</label>
-          <input id="name" name="name" required placeholder="Tên của bạn" style="width:100%;padding:12px;border-radius:12px;border:1px solid color-mix(in oklab, var(--muted) 25%, transparent);background:var(--panel);color:var(--text)" />
-          <div style="height:10px"></div>
-          <label class="sr-only" for="email">Email</label>
-          <input id="email" name="email" type="email" required placeholder="Email" style="width:100%;padding:12px;border-radius:12px;border:1px solid color-mix(in oklab, var(--muted) 25%, transparent);background:var(--panel);color:var(--text)" />
-          <div style="height:10px"></div>
-          <label class="sr-only" for="message">Nội dung</label>
-          <textarea id="message" name="message" required rows="5" placeholder="Nội dung" style="width:100%;padding:12px;border-radius:12px;border:1px solid color-mix(in oklab, var(--muted) 25%, transparent);background:var(--panel);color:var(--text)"></textarea>
-          <div style="height:12px"></div>
-          <button type="submit" class="btn primary">Gửi</button>
-        </form>
-      </div>
-    </section>
-
-    <section class="footer">
-      <div class="container" style="display:flex; justify-content:space-between; flex-wrap:wrap; gap:10px">
-        <div>© <span id="y"></span> Phan Văn Tiến. Made with ❤ · <a class="muted" href="https://tienphanv.io.vn">tienphanv.io.vn</a></div>
-        <div class="muted">Lấy cảm hứng từ phong cách tối giản (minimal) của trang CV thầy Hiếu.</div>
-      </div>
-    </section>
-  </main>
-
+        <div class="field-group message-group">
+          <label for="message">Lời nhắn</label>
+          <textarea id="message" name="message" rows="4" placeholder="Nhập lời nhắn của bạn" required></textarea>
+        </div>
+        <button type="submit">Gửi</button>
+      </form>
+    </div>
+  </section>
   <script>
-    // Scroll to hash with smooth behavior
-    document.querySelectorAll('a[href^="#"]').forEach(a=>{
-      a.addEventListener('click', e=>{
-        const id=a.getAttribute('href'); if(id==="#"||id==="") return;
-        const el=document.querySelector(id); if(!el) return;
-        e.preventDefault(); el.scrollIntoView({behavior:'smooth', block:'start'});
-        history.pushState(null, '', id);
+    // Áp dụng chế độ tối nếu trình duyệt đang dùng
+    if(window.matchMedia('(prefers-color-scheme: dark)').matches) {
+      document.documentElement.classList.add('dark');
+      const icon = document.getElementById('theme-toggle').querySelector('i');
+      icon.classList.remove('fa-moon');
+      icon.classList.add('fa-sun');
+    }
+    // Nút chuyển đổi giao diện Dark/Light
+    const themeToggle = document.getElementById('theme-toggle');
+    themeToggle.addEventListener('click', () => {
+      document.documentElement.classList.toggle('dark');
+      const icon = themeToggle.querySelector('i');
+      if (document.documentElement.classList.contains('dark')) {
+        icon.classList.remove('fa-moon');
+        icon.classList.add('fa-sun');
+      } else {
+        icon.classList.remove('fa-sun');
+        icon.classList.add('fa-moon');
+      }
+    });
+    // Hiệu ứng xuất hiện khi cuộn trang
+    const observer = new IntersectionObserver(entries => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('visible');
+          observer.unobserve(entry.target);
+        }
       });
+    }, { threshold: 0.1 });
+    document.querySelectorAll('.fade-in').forEach(el => {
+      observer.observe(el);
     });
-
-    // Theme toggle
-    const themeBtn=document.getElementById('themeBtn');
-    const prefersDark=window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches;
-    const saved=localStorage.getItem('theme');
-    if(saved==='light') document.documentElement.style.colorScheme='light';
-    if(saved==='dark' || (!saved && prefersDark)) document.documentElement.style.colorScheme='dark';
-    themeBtn?.addEventListener('click',()=>{
-      const cs=getComputedStyle(document.documentElement).colorScheme;
-      const next= cs==='dark' ? 'light' : 'dark';
-      document.documentElement.style.colorScheme=next; localStorage.setItem('theme', next);
-      themeBtn.setAttribute('aria-pressed', next==='dark');
-    });
-
-    // Current year
-    document.getElementById('y').textContent=new Date().getFullYear();
   </script>
 </body>
 </html>
