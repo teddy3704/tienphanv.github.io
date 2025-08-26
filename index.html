@@ -136,7 +136,14 @@
       a{color:#000; text-decoration:none}
       .project-card{page-break-inside:avoid}
     }
-  </style>
+    /* QR Modal */
+  .qr-overlay{position:fixed; inset:0; background:rgba(0,0,0,.6); display:none; place-items:center; z-index:80; padding:20px}
+  .qr-overlay.show{display:grid}
+  .qr-card{background:var(--card); border:1px solid color-mix(in oklab,var(--border) 70%, transparent); border-radius:16px; padding:14px; box-shadow:var(--shadow); max-width:360px; width:100%; text-align:center}
+  .qr-card h3{margin:6px 0 10px}
+  .qr-img{width:100%; height:auto; border-radius:12px; background:#fff}
+  .qr-close{margin-top:10px}
+</style>
 </head>
 <body>
   <!-- NAVBAR -->
@@ -177,7 +184,7 @@
                 <svg viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M12 2a10 10 0 0 0-3.162 19.493c.5.093.683-.217.683-.483 0-.237-.01-1.022-.015-1.854-2.78.604-3.367-1.187-3.367-1.187-.455-1.155-1.11-1.463-1.11-1.463-.908-.62.07-.607.07-.607 1.003.07 1.53 1.03 1.53 1.03.892 1.528 2.341 1.087 2.91.832.09-.647.35-1.087.636-1.337-2.22-.253-4.555-1.11-4.555-4.943 0-1.091.39-1.984 1.03-2.683-.103-.253-.447-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0 1 12 6.844c.85.004 1.705.115 2.504.337 1.91-1.296 2.748-1.026 2.748-1.026.546 1.378.202 2.397.1 2.65.64.699 1.028 1.592 1.028 2.683 0 3.842-2.339 4.687-4.566 4.936.359.31.678.924.678 1.864 0 1.345-.012 2.43-.012 2.762 0 .268.18.58.688.481A10 10 0 0 0 12 2Z"/></svg>
                 github.com/teddy3704
               </a>
-              <span class="chip" title="Có thể thay bằng QR Zalo">💬 Zalo: <span class="muted">(thêm QR nếu cần)</span></span>
+              <a class="chip" href="#qr" id="qrBtn" title="Quét QR Zalo">💬 Zalo (QR)</a></span>
             </div>
             <div style="margin-top:12px; display:flex; gap:10px; flex-wrap:wrap">
               <a class="btn print-hide" href="#contact">Liên hệ ngay</a>
@@ -302,7 +309,16 @@
     <footer class="section muted" style="text-align:center">© <span id="year"></span> Phan Văn Tiến · Made with ♥</footer>
   </main>
 
-  <!-- Floating buttons -->
+  <!-- QR Overlay -->
+<div class="qr-overlay" id="qrOverlay" aria-hidden="true">
+  <div class="qr-card" role="dialog" aria-modal="true" aria-labelledby="qrTitle">
+    <h3 id="qrTitle">Quét QR Zalo</h3>
+    <img class="qr-img" src="https://github.com/teddy3704/tienphanv.github.io/blob/main/QR.jpg?raw=true" alt="QR Zalo - Phan Văn Tiến" width="320" height="320" loading="lazy"/>
+    <button class="btn qr-close" id="qrClose">Đóng</button>
+  </div>
+</div>
+
+<!-- Floating buttons -->
   <button class="theme" id="themeBtn" title="Bật/Tắt giao diện sáng tối" aria-pressed="false" aria-label="Giao diện">
     <svg id="themeIcon" width="18" height="18" viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M12 3a1 1 0 0 1 1 1v2a1 1 0 1 1-2 0V4a1 1 0 0 1 1-1m7 9a1 1 0 0 1 1 1h2a1 1 0 1 1 0 2h-2a1 1 0 1 1-2 0 6 6 0 1 1-6-6 1 1 0 1 1 0-2 8 8 0 1 0 8 8 1 1 0 1 1-2 0a1 1 0 0 1 1-1Z"/></svg>
   </button>
@@ -388,6 +404,14 @@
 
     // Year
     $('#year').textContent=new Date().getFullYear();
+  
+    // QR overlay open/close
+    const qrBtn = document.getElementById('qrBtn');
+    const qrOverlay = document.getElementById('qrOverlay');
+    const qrClose = document.getElementById('qrClose');
+    qrBtn?.addEventListener('click',(e)=>{ e.preventDefault(); qrOverlay.classList.add('show'); });
+    qrClose?.addEventListener('click',()=> qrOverlay.classList.remove('show'));
+    qrOverlay?.addEventListener('click',(e)=>{ if(e.target===qrOverlay) qrOverlay.classList.remove('show'); });
   </script>
 </body>
 </html>
