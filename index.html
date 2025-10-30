@@ -7,12 +7,17 @@
   <meta name="description" content="Phan Văn Tiến — Full‑stack Developer tại Đà Lạt. Web API (Express), CI/CD, Testing. Portfolio & liên hệ." />
   <link rel="canonical" href="https://tienphanv.io.vn/" />
 
+  <!-- Theming -->
+  <meta name="theme-color" media="(prefers-color-scheme: light)" content="#ffffff" />
+  <meta name="theme-color" media="(prefers-color-scheme: dark)" content="#0b0e14" />
+
   <!-- Favicon (SVG, nhẹ) -->
   <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='12' fill='%231f2937'/%3E%3Cpath d='M18 46h16c9 0 15-6 15-14s-6-14-15-14H22v6h12c5 0 9 4 9 8s-4 8-9 8H18z' fill='%23fff'/%3E%3C/svg%3E" />
 
   <!-- Social Sharing -->
   <meta property="og:type" content="website" />
   <meta property="og:url" content="https://tienphanv.io.vn/" />
+  <meta property="og:locale" content="vi_VN" />
   <meta property="og:title" content="Phan Văn Tiến — CV / Portfolio" />
   <meta property="og:description" content="Full‑stack Developer / Software Engineer. Web API, CI/CD, Testing." />
   <meta property="og:image" content="https://raw.githubusercontent.com/teddy3704/tienphanv.github.io/main/avatar.jpg" />
@@ -35,8 +40,8 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 
-  <!-- Preload avatar for faster Largest Contentful Paint -->
-  <link rel="preload" as="image" href="https://github.com/teddy3704/tienphanv.github.io/blob/main/avatar.jpg?raw=true" />
+  <!-- Preload avatar for faster LCP -->
+  <link rel="preload" as="image" href="https://raw.githubusercontent.com/teddy3704/tienphanv.github.io/main/avatar.jpg" />
 
   <style>
     :root{
@@ -57,6 +62,10 @@
     a{color:inherit}
     .container{max-width:1100px; margin-inline:auto; padding:0 20px}
 
+    /* Accessibility: skip link */
+    .skip{position:absolute; left:-9999px; top:auto; width:1px; height:1px; overflow:hidden}
+    .skip:focus{left:16px; top:16px; width:auto; height:auto; z-index:60; background:var(--card); border:1px solid var(--border); padding:8px 12px; border-radius:10px}
+
     /* NAVBAR */
     .topnav{position:sticky; top:0; z-index:50; backdrop-filter:saturate(1.15) blur(10px);
       background:color-mix(in oklab, var(--bg) 88%, transparent); border-bottom:1px solid color-mix(in oklab,var(--border) 60%, transparent)}
@@ -65,7 +74,7 @@
     .brand svg{width:24px;height:24px}
     .menu{display:flex; gap:10px; flex-wrap:wrap}
     .menu a{font-weight:600; text-decoration:none; padding:8px 12px; border-radius:10px}
-    .menu a.active{background:color-mix(in oklab, var(--brand) 18%, transparent)}
+    .menu a.active,[aria-current="page"]{background:color-mix(in oklab, var(--brand) 18%, transparent)}
 
     /* HERO */
     .hero{position:relative; padding:56px 0 28px}
@@ -90,6 +99,7 @@
     @media (max-width: 900px){ .hero-grid{grid-template-columns:1fr} .cols-2{grid-template-columns:1fr} }
 
     /* PROJECT CARDS */
+    .project-toolbar{display:flex; gap:8px; flex-wrap:wrap; margin-bottom:10px}
     .project-grid{display:grid; grid-template-columns:repeat(auto-fit, minmax(260px, 1fr)); gap:18px}
     .project-card{position:relative; min-height:190px; border-radius:16px; overflow:hidden; background:#111; color:#fff; display:flex; flex-direction:column; justify-content:flex-end; box-shadow:0 10px 24px rgba(0,0,0,.25); transition:transform .25s, box-shadow .25s}
     .project-card::before{content:""; position:absolute; inset:0; background:linear-gradient(to top, rgba(0,0,0,.55), rgba(0,0,0,.12)), var(--img) center/cover no-repeat; filter:saturate(1.05) contrast(1.03)}
@@ -117,6 +127,7 @@
     .textarea{min-height:120px; resize:vertical}
     .btn{display:inline-flex; align-items:center; gap:8px; padding:10px 14px; border-radius:12px; border:1px solid color-mix(in oklab,var(--border) 70%, transparent); background:linear-gradient(135deg, color-mix(in oklab, var(--brand) 45%, var(--card)), color-mix(in oklab, var(--brand2) 35%, var(--card))); box-shadow:var(--shadow); text-decoration:none; font-weight:700; color:#fff}
     .btn.ghost{background:transparent; color:inherit}
+    .btn.small{padding:8px 10px; font-weight:600}
 
     /* TO TOP + THEME TOGGLE */
     .toTop{position:fixed; right:16px; bottom:16px; width:44px; height:44px; border-radius:50%; border:none; display:none; place-items:center; background:linear-gradient(135deg,var(--brand),var(--brand2)); color:#fff; box-shadow:var(--shadow); cursor:pointer}
@@ -131,21 +142,31 @@
     /* PRINT */
     @media print{
       body{background:#fff; color:#000}
-      .topnav, .theme, .toTop, .btn.print-hide{display:none !important}
+      .topnav, .theme, .toTop, .btn.print-hide, .project-toolbar{display:none !important}
       .card{box-shadow:none; border-color:#ddd}
       a{color:#000; text-decoration:none}
       .project-card{page-break-inside:avoid}
     }
+
     /* QR Modal */
-  .qr-overlay{position:fixed; inset:0; background:rgba(0,0,0,.6); display:none; place-items:center; z-index:80; padding:20px}
-  .qr-overlay.show{display:grid}
-  .qr-card{background:var(--card); border:1px solid color-mix(in oklab,var(--border) 70%, transparent); border-radius:16px; padding:14px; box-shadow:var(--shadow); max-width:360px; width:100%; text-align:center}
-  .qr-card h3{margin:6px 0 10px}
-  .qr-img{width:100%; height:auto; border-radius:12px; background:#fff}
-  .qr-close{margin-top:10px}
-</style>
+    .qr-overlay{position:fixed; inset:0; background:rgba(0,0,0,.6); display:none; place-items:center; z-index:80; padding:20px}
+    .qr-overlay.show{display:grid}
+    .qr-card{background:var(--card); border:1px solid color-mix(in oklab,var(--border) 70%, transparent); border-radius:16px; padding:14px; box-shadow:var(--shadow); max-width:360px; width:100%; text-align:center}
+    .qr-card h3{margin:6px 0 10px}
+    .qr-img{width:100%; height:auto; border-radius:12px; background:#fff}
+    .qr-close{margin-top:10px}
+
+    /* Progress bar */
+    .progress{position:fixed; inset:0 0 auto 0; height:3px; background:linear-gradient(90deg,var(--brand),var(--brand2)); transform-origin:0 50%; transform:scaleX(0); z-index:55}
+
+    /* Footer */
+    footer small{opacity:.8}
+  </style>
 </head>
 <body>
+  <a href="#top" class="skip">Bỏ qua menu, đến nội dung chính</a>
+  <div class="progress" id="progress"></div>
+
   <!-- NAVBAR -->
   <header class="topnav" aria-label="Thanh điều hướng">
     <div class="container inner">
@@ -170,7 +191,7 @@
       <div class="hero-grid">
         <div class="card" style="display:grid; grid-template-columns:auto 1fr; gap:16px; align-items:center;">
           <div class="avatar-wrap">
-            <img class="avatar" src="https://github.com/teddy3704/tienphanv.github.io/blob/main/avatar.jpg?raw=true" alt="Ảnh đại diện Phan Văn Tiến" width="300" height="300"/>
+            <img class="avatar" src="https://raw.githubusercontent.com/teddy3704/tienphanv.github.io/main/avatar.jpg" alt="Ảnh đại diện Phan Văn Tiến" width="300" height="300"/>
           </div>
           <div>
             <h1 id="name" style="font-size:clamp(28px,4vw,40px); line-height:1.2; margin:0 0 6px">Phan Văn Tiến</h1>
@@ -184,11 +205,13 @@
                 <svg viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M12 2a10 10 0 0 0-3.162 19.493c.5.093.683-.217.683-.483 0-.237-.01-1.022-.015-1.854-2.78.604-3.367-1.187-3.367-1.187-.455-1.155-1.11-1.463-1.11-1.463-.908-.62.07-.607.07-.607 1.003.07 1.53 1.03 1.53 1.03.892 1.528 2.341 1.087 2.91.832.09-.647.35-1.087.636-1.337-2.22-.253-4.555-1.11-4.555-4.943 0-1.091.39-1.984 1.03-2.683-.103-.253-.447-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0 1 12 6.844c.85.004 1.705.115 2.504.337 1.91-1.296 2.748-1.026 2.748-1.026.546 1.378.202 2.397.1 2.65.64.699 1.028 1.592 1.028 2.683 0 3.842-2.339 4.687-4.566 4.936.359.31.678.924.678 1.864 0 1.345-.012 2.43-.012 2.762 0 .268.18.58.688.481A10 10 0 0 0 12 2Z"/></svg>
                 github.com/teddy3704
               </a>
-              <a class="chip" href="#qr" id="qrBtn" title="Quét QR Zalo">💬 Zalo (QR)</a></span>
+              <button class="chip" id="copyEmail" title="Sao chép email">📋 Copy email</button>
+              <a class="chip" href="#qr" id="qrBtn" title="Quét QR Zalo">💬 Zalo (QR)</a>
             </div>
             <div style="margin-top:12px; display:flex; gap:10px; flex-wrap:wrap">
               <a class="btn print-hide" href="#contact">Liên hệ ngay</a>
               <a class="btn ghost print-hide" href="#" onclick="window.print();return false;">Tải PDF</a>
+              <a class="btn ghost small print-hide" href="resume.pdf" download>⬇️ Tải CV (PDF)</a>
             </div>
           </div>
         </div>
@@ -250,18 +273,32 @@
 
     <!-- PROJECTS -->
     <section id="projects" class="section" aria-labelledby="proj-title">
-      <h2 id="proj-title">Dự án tiêu biểu</h2>
-      <div class="project-grid fade">
+      <div style="display:flex; align-items:center; justify-content:space-between; gap:12px; flex-wrap:wrap">
+        <h2 id="proj-title" style="margin:0">Dự án tiêu biểu</h2>
+        <div class="project-toolbar print-hide" role="toolbar" aria-label="Bộ lọc dự án">
+          <button class="chip" data-filter="all" aria-pressed="true">Tất cả</button>
+          <button class="chip" data-filter="api">API</button>
+          <button class="chip" data-filter="web">Web</button>
+          <button class="chip" data-filter="ci">CI/CD</button>
+        </div>
+      </div>
+
+      <div class="project-grid fade" id="projectGrid">
         <a class="project-card" href="https://tienphanv.io.vn" target="_blank" rel="noopener"
-           style="--img:url('https://images.unsplash.com/photo-1518773553398-650c184e0bb3?q=80&w=1600&auto=format&fit=crop');">
+           data-tags="web" style="--img:url('https://images.unsplash.com/photo-1518773553398-650c184e0bb3?q=80&w=1600&auto=format&fit=crop');">
           <div class="pc-title">Personal CV Website</div>
           <div class="pc-tags">HTML/CSS · GitHub Pages</div>
         </a>
-        <div class="project-card"
+        <div class="project-card" data-tags="api ci"
              style="--img:url('https://images.unsplash.com/photo-1553484771-371a605b060b?q=80&w=1600&auto=format&fit=crop');">
           <div class="pc-title">EasyFood API</div>
           <div class="pc-tags">Node.js · JWT · CI</div>
         </div>
+        <a class="project-card" href="https://github.com/teddy3704" target="_blank" rel="noopener" data-tags="api web"
+           style="--img:url('https://images.unsplash.com/photo-1527430253228-e93688616381?q=80&w=1600&auto=format&fit=crop');">
+          <div class="pc-title">Postman Collections</div>
+          <div class="pc-tags">Testing · Newman</div>
+        </a>
       </div>
     </section>
 
@@ -284,6 +321,7 @@
       <div class="card fade contact-form">
         <p class="muted">Điền form dưới đây để gửi lời nhắn. Nếu chưa cấu hình Formspree, hệ thống sẽ mở email với nội dung đã điền.</p>
         <form id="contactForm" action="https://formspree.io/f/your-id" method="POST" novalidate>
+          <input type="text" name="_gotcha" tabindex="-1" autocomplete="off" style="position:absolute; left:-5000px" aria-hidden="true" />
           <div class="frow">
             <label class="field">Tên của bạn
               <input class="input" type="text" name="name" placeholder="Ví dụ: Nguyễn Văn A" required />
@@ -306,19 +344,19 @@
       </div>
     </section>
 
-    <footer class="section muted" style="text-align:center">© <span id="year"></span> Phan Văn Tiến · Made with ♥</footer>
+    <footer class="section muted" style="text-align:center">© <span id="year"></span> Phan Văn Tiến · <small>Cập nhật: 30/10/2025</small></footer>
   </main>
 
   <!-- QR Overlay -->
-<div class="qr-overlay" id="qrOverlay" aria-hidden="true">
-  <div class="qr-card" role="dialog" aria-modal="true" aria-labelledby="qrTitle">
-    <h3 id="qrTitle">Quét QR Zalo</h3>
-    <img class="qr-img" src="https://github.com/teddy3704/tienphanv.github.io/blob/main/QR.jpg?raw=true" alt="QR Zalo - Phan Văn Tiến" width="320" height="320" loading="lazy"/>
-    <button class="btn qr-close" id="qrClose">Đóng</button>
+  <div class="qr-overlay" id="qrOverlay" aria-hidden="true">
+    <div class="qr-card" role="dialog" aria-modal="true" aria-labelledby="qrTitle">
+      <h3 id="qrTitle">Quét QR Zalo</h3>
+      <img class="qr-img" src="https://raw.githubusercontent.com/teddy3704/tienphanv.github.io/main/QR.jpg" alt="QR Zalo - Phan Văn Tiến" width="320" height="320" loading="lazy"/>
+      <button class="btn qr-close" id="qrClose">Đóng</button>
+    </div>
   </div>
-</div>
 
-<!-- Floating buttons -->
+  <!-- Floating buttons -->
   <button class="theme" id="themeBtn" title="Bật/Tắt giao diện sáng tối" aria-pressed="false" aria-label="Giao diện">
     <svg id="themeIcon" width="18" height="18" viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M12 3a1 1 0 0 1 1 1v2a1 1 0 1 1-2 0V4a1 1 0 0 1 1-1m7 9a1 1 0 0 1 1 1h2a1 1 0 1 1 0 2h-2a1 1 0 1 1-2 0 6 6 0 1 1-6-6 1 1 0 1 1 0-2 8 8 0 1 0 8 8 1 1 0 1 1-2 0a1 1 0 0 1 1-1Z"/></svg>
   </button>
@@ -359,7 +397,7 @@
     const io=new IntersectionObserver(es=>{
       es.forEach(e=>{
         const id='#'+e.target.id; const el=map.get(id); if(!el) return;
-        if(e.isIntersecting){ links.forEach(l=>l.classList.remove('active')); el.classList.add('active'); }
+        if(e.isIntersecting){ links.forEach(l=>l.classList.remove('active')); el.classList.add('active'); el.setAttribute('aria-current','page'); }
       });
     },{threshold:.4});
     document.querySelectorAll('section[id]').forEach(s=>io.observe(s));
@@ -368,17 +406,44 @@
     const fadeIO=new IntersectionObserver(es=>{ es.forEach(e=>{ if(e.isIntersecting){ e.target.classList.add('show'); fadeIO.unobserve(e.target);} }); },{threshold:.15});
     document.querySelectorAll('.fade').forEach(el=>fadeIO.observe(el));
 
-    // To top button
+    // To top button + progress bar
     const toTop=$('#toTop');
-    addEventListener('scroll',()=>{ toTop.classList.toggle('show', scrollY>500) });
+    const progress=$('#progress');
+    addEventListener('scroll',()=>{
+      toTop.classList.toggle('show', scrollY>500);
+      const h=document.documentElement; const ratio=(h.scrollTop)/(h.scrollHeight-h.clientHeight);
+      progress.style.transform=`scaleX(${Math.max(0, Math.min(1, ratio))})`;
+    });
     toTop.addEventListener('click',()=>scrollTo({top:0,behavior:'smooth'}));
 
-    // Contact form: Formspree AJAX + mailto fallback
+    // Copy email button
+    $('#copyEmail')?.addEventListener('click', async ()=>{
+      try{ await navigator.clipboard.writeText('2212472@dlu.edu.vn');
+        const b=$('#copyEmail'); b.textContent='✅ Đã sao chép'; setTimeout(()=>b.textContent='📋 Copy email',1500);
+      }catch{ alert('Không sao chép được, vui lòng copy thủ công.'); }
+    });
+
+    // Project filter
+    (function initFilter(){
+      const grid=$('#projectGrid'); const btns=[...document.querySelectorAll('[data-filter]')];
+      btns.forEach(b=>b.addEventListener('click',()=>{
+        btns.forEach(x=>x.removeAttribute('aria-pressed'));
+        b.setAttribute('aria-pressed','true');
+        const f=b.dataset.filter; // all | tag
+        [...grid.children].forEach(card=>{
+          const tags=(card.getAttribute('data-tags')||'').split(/\s+/);
+          card.style.display=(f==='all'||tags.includes(f))?'' : 'none';
+        });
+      }));
+    })();
+
+    // Contact form: Formspree AJAX + mailto fallback + spam honeypot
     (function initForm(){
       const form=$('#contactForm'); const btn=$('#sendBtn'); const st=$('#status');
       form.addEventListener('submit', async (e)=>{
         e.preventDefault();
         const data=new FormData(form);
+        if(data.get('_gotcha')) return; // bot detected
         const hasFormspree=!form.action.includes('your-id');
         btn.disabled=true; st.textContent='Đang gửi…';
         if(hasFormspree){
