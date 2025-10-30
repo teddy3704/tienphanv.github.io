@@ -195,7 +195,7 @@
           </div>
           <div>
             <h1 id="name" style="font-size:clamp(28px,4vw,40px); line-height:1.2; margin:0 0 6px">Phan Văn Tiến</h1>
-            <p class="muted" style="margin:0 0 10px">Full‑stack Developer / Software Engineer — Đà Lạt, Việt Nam</p>
+            <p class="muted" style="margin:0 0 10px">Full‑stack Developer định hướng sản phẩm · Ưu tiên tốc độ triển khai (shipping), độ tin cậy (reliability) và khả năng đo lường tác động (measurable impact). Tư duy CEO: tối ưu trải nghiệm người dùng, tiết kiệm chi phí vận hành, và mở rộng quy mô một cách bền vững.</p>
             <div class="social">
               <a class="chip" href="mailto:2212472@dlu.edu.vn" title="Gửi email">
                 <svg viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M20 4H4a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V6a2 2 0 0 0-2-2Zm0 4-8 5L4 8V6l8 5 8-5Z"/></svg>
@@ -216,14 +216,22 @@
           </div>
         </div>
         <div class="card">
-          <h2 style="margin-top:0">Tóm tắt</h2>
+          <h2 style="margin-top:0">Tuyên ngôn nghề nghiệp</h2>
           <p>
-            Sinh viên Công nghệ phần mềm định hướng Full‑stack. Kinh nghiệm với Node.js/Express, cơ sở dữ liệu SQLite/SQL Server,
-            CI/CD bằng GitHub Actions và kiểm thử API với Postman/Newman. Quan tâm tối ưu UX và chất lượng phần mềm.
+            Tôi xây hệ thống web đơn giản mà mạnh mẽ: API rõ ràng, CI/CD gọn nhẹ, test chạy tự động. Tập trung 3 trụ cột: (1) giảm rủi ro phát hành, (2) rút ngắn chu kỳ ý tưởng → người dùng, (3) dữ liệu hoá mọi quyết định.
           </p>
-          <div class="grid" style="grid-template-columns:repeat(auto-fit,minmax(160px,1fr)); margin-top:10px">
-            <div class="chip" style="justify-content:center">JavaScript / Node.js</div>
-            <div class="chip" style="justify-content:center">Express / REST API</div>
+          <ul class="muted" style="margin:8px 0 0 18px">
+            <li>Thiết kế API theo hợp đồng (contract‑first), tài liệu hoá tự động.</li>
+            <li>Pipeline CI/CD “1 file” trên GitHub Actions: lint → test → build → deploy.</li>
+            <li>Quan sát hệ thống (logs/metrics) ngay từ ngày đầu.</li>
+          </ul>
+          <div class="grid" style="grid-template-columns:repeat(auto-fit,minmax(160px,1fr)); margin-top:12px">
+            <div class="chip" style="justify-content:center">Node.js / Express</div>
+            <div class="chip" style="justify-content:center">REST API / OpenAPI</div>
+            <div class="chip" style="justify-content:center">SQL (SQLite, SQL Server)</div>
+            <div class="chip" style="justify-content:center">Git & GitHub Actions</div>
+            <div class="chip" style="justify-content:center">Testing (Postman/Newman)</div>
+          </div>
             <div class="chip" style="justify-content:center">SQL / SQLite / SQL Server</div>
             <div class="chip" style="justify-content:center">Git & GitHub</div>
             <div class="chip" style="justify-content:center">Testing (Postman/Newman)</div>
@@ -234,12 +242,13 @@
 
     <!-- SKILLS -->
     <section id="skills" class="section" aria-labelledby="skills-title">
-      <h2 id="skills-title">Kỹ năng</h2>
+      <h2 id="skills-title">Kỹ năng lõi (CEO mindset)</h2>
       <div class="skill-grid fade">
-        <div class="skill"><h3>Web API (Express)</h3><p class="muted">Thiết kế route, middleware, auth JWT, validation.</p></div>
-        <div class="skill"><h3>CI/CD</h3><p class="muted">GitHub Actions: build, test, lint, deploy.</p></div>
-        <div class="skill"><h3>Testing</h3><p class="muted">Postman/Newman; unit/integration cơ bản.</p></div>
-        <div class="skill"><h3>Database</h3><p class="muted">SQLite, SQL Server; migration & schema.</p></div>
+        <div class="skill"><h3>API như sản phẩm</h3><p class="muted">Thiết kế theo domain; versioning; hợp đồng OpenAPI; rate‑limit & auth JWT.</p></div>
+        <div class="skill"><h3>CI/CD tối giản</h3><p class="muted">1 pipeline tự kiểm tra mọi PR; cache hợp lý; rollback dễ dàng.</p></div>
+        <div class="skill"><h3>Chất lượng & Test</h3><p class="muted">Postman/Newman E2E; unit/integration; kiểm tra hồi quy trước khi phát hành.</p></div>
+        <div class="skill"><h3>Data & DB</h3><p class="muted">Thiết kế schema, migration an toàn; truy vấn hiệu quả; backup & seeding.</p></div>
+        <div class="skill"><h3>Vận hành & Quan sát</h3><p class="muted">Log có cấu trúc, healthcheck, cấu hình 12‑factor, cảnh báo sớm.</p></div>
       </div>
     </section>
 
@@ -252,9 +261,9 @@
           <div>
             <div style="font-weight:700">Easy Food — Web & Android (đồ án nhóm)</div>
             <ul class="muted" style="margin:6px 0 0 18px">
-              <li>Thiết kế REST API, xác thực JWT, chuẩn hoá schema DB & migration.</li>
-              <li>Tự động hoá kiểm thử API bằng Postman + Newman.</li>
-              <li>Thiết lập CI/CD GitHub Actions (build & test).</li>
+              <li>Thiết kế REST API theo chuẩn tài liệu hoá tự động (OpenAPI), xác thực JWT, phân quyền cơ bản.</li>
+              <li>Xây bộ test Postman + Newman chạy CI trên GitHub Actions (mỗi PR bắt buộc pass trước khi merge).</li>
+              <li>Chuẩn hoá schema & migration; seed dữ liệu demo; tạo script khởi tạo môi trường nhanh.</li>
             </ul>
           </div>
         </div>
@@ -263,13 +272,34 @@
           <div>
             <div style="font-weight:700">Web nâng cao — Client/Server Labs</div>
             <ul class="muted" style="margin:6px 0 0 18px">
-              <li>Phục vụ static/dynamic content; mô phỏng vòng đời request–response.</li>
-              <li>Áp dụng kiểm thử bảo mật: rate‑limit, input validation.</li>
+              <li>Xây máy chủ phục vụ static/dynamic; hiểu sâu lifecycle request–response, headers & caching.</li>
+              <li>Áp dụng kiểm thử bảo mật: rate‑limit, input validation, kiểm soát lỗi/timeout.</li>
             </ul>
           </div>
         </div>
       </div>
     </section>
+
+    <!-- VALUE SECTION (new) -->
+    <section class="section" aria-labelledby="value-title">
+      <h2 id="value-title">Tôi mang lại gì cho đội ngũ?</h2>
+      <div class="grid cols-2 fade">
+        <div class="card">
+          <h3 style="margin:6px 0">Tốc độ có kiểm soát</h3>
+          <p class="muted">Ưu tiên release nhỏ, đều đặn; mỗi lần phát hành đều có log thay đổi và test đi kèm.</p>
+        </div>
+        <div class="card">
+          <h3 style="margin:6px 0">Chi phí hợp lý</h3>
+          <p class="muted">Chọn công cụ nhẹ, miễn phí/OSS khi phù hợp; cấu hình tối giản để dễ bảo trì.</p>
+        </div>
+        <div class="card">
+          <h3 style="margin:6px 0">Đo được tác động</h3>
+          <p class="muted">Thiết lập chỉ số đơn giản (build time, test pass rate, lỗi sản xuất) để ra quyết định.</p>
+        </div>
+        <div class="card">
+          <h3 style="margin:6px 0">Tư duy sản phẩm</h3>
+          <p class="muted">Viết tính năng bắt đầu từ nhu cầu người dùng; loại bỏ phức tạp không cần thiết.</p>
+        </div>
 
     <!-- PROJECTS -->
     <section id="projects" class="section" aria-labelledby="proj-title">
