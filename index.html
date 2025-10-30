@@ -1,512 +1,63 @@
+<!-- Updated portfolio with additional flagship projects and executive narrative -->
 <!doctype html>
 <html lang="vi">
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Phan Văn Tiến — CV / Portfolio</title>
-  <meta name="description" content="Phan Văn Tiến — Full‑stack Developer tại Đà Lạt. Web API (Express), CI/CD, Testing. Portfolio & liên hệ." />
+  <title>Phan Văn Tiến — CEO‑minded Full‑stack Developer</title>
+  <meta name="description" content="Phan Văn Tiến — CEO‑minded Full‑stack Developer. Chatbot, Smart Brew, Web API, CI/CD, Testing." />
   <link rel="canonical" href="https://tienphanv.io.vn/" />
-
-  <!-- Theming -->
-  <meta name="theme-color" media="(prefers-color-scheme: light)" content="#ffffff" />
-  <meta name="theme-color" media="(prefers-color-scheme: dark)" content="#0b0e14" />
-
-  <!-- Favicon (SVG, nhẹ) -->
-  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='12' fill='%231f2937'/%3E%3Cpath d='M18 46h16c9 0 15-6 15-14s-6-14-15-14H22v6h12c5 0 9 4 9 8s-4 8-9 8H18z' fill='%23fff'/%3E%3C/svg%3E" />
-
-  <!-- Social Sharing -->
-  <meta property="og:type" content="website" />
-  <meta property="og:url" content="https://tienphanv.io.vn/" />
-  <meta property="og:locale" content="vi_VN" />
-  <meta property="og:title" content="Phan Văn Tiến — CV / Portfolio" />
-  <meta property="og:description" content="Full‑stack Developer / Software Engineer. Web API, CI/CD, Testing." />
-  <meta property="og:image" content="https://raw.githubusercontent.com/teddy3704/tienphanv.github.io/main/avatar.jpg" />
-  <meta name="twitter:card" content="summary_large_image" />
-
-  <!-- Structured Data -->
-  <script type="application/ld+json">{
-    "@context":"https://schema.org",
-    "@type":"Person",
-    "name":"Phan Văn Tiến",
-    "url":"https://tienphanv.io.vn/",
-    "email":"mailto:2212472@dlu.edu.vn",
-    "jobTitle":"Full‑stack Developer",
-    "address":{"@type":"PostalAddress","addressLocality":"Đà Lạt","addressCountry":"VN"},
-    "sameAs":["https://github.com/teddy3704"]
-  }</script>
-
-  <!-- Fonts -->
-  <link rel="preconnect" href="https://fonts.googleapis.com"/>
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
-
-  <!-- Preload avatar for faster LCP -->
-  <link rel="preload" as="image" href="https://raw.githubusercontent.com/teddy3704/tienphanv.github.io/main/avatar.jpg" />
-
-  <style>
-    :root{
-      --bg:#0b0e14; --text:#e5e7eb; --muted:#9aa4b2; --card:#121826; --border:#263043; --brand:#8b5cf6; --brand2:#22d3ee;
-      --ring: rgba(139,92,246,.35); --shadow: 0 10px 30px rgba(0,0,0,.25);
-    }
-    @media (prefers-color-scheme: light){
-      :root{ --bg:#f8fafc; --text:#0f172a; --muted:#475569; --card:#ffffff; --border:#e2e8f0; --shadow:0 10px 30px rgba(2,6,23,.08); }
-    }
-    *{box-sizing:border-box}
-    html,body{height:100%}
-    body{margin:0; font-family:Inter,system-ui,Segoe UI,Roboto,Ubuntu,sans-serif; color:var(--text);
-      background:
-        radial-gradient(900px 600px at 10% -20%, rgba(34,211,238,.14), transparent 40%),
-        radial-gradient(900px 600px at 110% -10%, rgba(139,92,246,.18), transparent 40%),
-        var(--bg);
-      line-height:1.65;}
-    a{color:inherit}
-    .container{max-width:1100px; margin-inline:auto; padding:0 20px}
-
-    /* Accessibility: skip link */
-    .skip{position:absolute; left:-9999px; top:auto; width:1px; height:1px; overflow:hidden}
-    .skip:focus{left:16px; top:16px; width:auto; height:auto; z-index:60; background:var(--card); border:1px solid var(--border); padding:8px 12px; border-radius:10px}
-
-    /* NAVBAR */
-    .topnav{position:sticky; top:0; z-index:50; backdrop-filter:saturate(1.15) blur(10px);
-      background:color-mix(in oklab, var(--bg) 88%, transparent); border-bottom:1px solid color-mix(in oklab,var(--border) 60%, transparent)}
-    .topnav .inner{display:flex; gap:14px; align-items:center; justify-content:space-between; height:56px}
-    .brand{display:flex; align-items:center; gap:10px; font-weight:800; text-decoration:none}
-    .brand svg{width:24px;height:24px}
-    .menu{display:flex; gap:10px; flex-wrap:wrap}
-    .menu a{font-weight:600; text-decoration:none; padding:8px 12px; border-radius:10px}
-    .menu a.active,[aria-current="page"]{background:color-mix(in oklab, var(--brand) 18%, transparent)}
-
-    /* HERO */
-    .hero{position:relative; padding:56px 0 28px}
-    .hero::before{content:""; position:absolute; inset:-20px 0 -20px; pointer-events:none; opacity:.12;
-      background:radial-gradient(600px 260px at 20% 0%, rgba(139,92,246,.55), transparent 60%)}
-    .hero-grid{display:grid; grid-template-columns:1.1fr .9fr; gap:28px}
-    .card{background:var(--card); border:1px solid color-mix(in oklab,var(--border) 70%, transparent); border-radius:18px; padding:20px; box-shadow:var(--shadow)}
-    .avatar-wrap{position:relative; width:160px; aspect-ratio:1; isolation:isolate}
-    .avatar-wrap::before{content:""; position:absolute; inset:-4px; border-radius:50%; background:conic-gradient(from 180deg, var(--brand), var(--brand2), var(--brand)); filter:saturate(1.1); animation:spin 12s linear infinite; opacity:.9; z-index:-1}
-    .avatar{width:100%; height:100%; border-radius:50%; object-fit:cover; background:#fff; padding:6px; border:1px solid color-mix(in oklab,var(--border) 60%, transparent)}
-    @keyframes spin{to{transform:rotate(1turn)}}
-    .social{display:flex; gap:10px; flex-wrap:wrap; margin-top:8px}
-    .chip{display:inline-flex; align-items:center; gap:8px; padding:8px 12px; border-radius:999px; background:var(--card); border:1px solid color-mix(in oklab,var(--border) 70%, transparent); box-shadow:var(--shadow); text-decoration:none}
-    .chip svg{width:16px;height:16px}
-
-    /* SECTIONS */
-    .section{padding:28px 0}
-    .section h2{font-size:24px; margin:0 0 12px}
-    .muted{color:var(--muted)}
-    .grid{display:grid; gap:18px}
-    .cols-2{grid-template-columns:repeat(2, minmax(0,1fr))}
-    @media (max-width: 900px){ .hero-grid{grid-template-columns:1fr} .cols-2{grid-template-columns:1fr} }
-
-    /* PROJECT CARDS */
-    .project-toolbar{display:flex; gap:8px; flex-wrap:wrap; margin-bottom:10px}
-    .project-grid{display:grid; grid-template-columns:repeat(auto-fit, minmax(260px, 1fr)); gap:18px}
-    .project-card{position:relative; min-height:190px; border-radius:16px; overflow:hidden; background:#111; color:#fff; display:flex; flex-direction:column; justify-content:flex-end; box-shadow:0 10px 24px rgba(0,0,0,.25); transition:transform .25s, box-shadow .25s}
-    .project-card::before{content:""; position:absolute; inset:0; background:linear-gradient(to top, rgba(0,0,0,.55), rgba(0,0,0,.12)), var(--img) center/cover no-repeat; filter:saturate(1.05) contrast(1.03)}
-    .project-card>*{position:relative; padding:12px 14px}
-    .project-card .pc-title{font-weight:800; font-size:1.05rem}
-    .project-card .pc-tags{opacity:.95; font-weight:600}
-    .project-card:hover{transform:translateY(-4px); box-shadow:0 16px 34px rgba(0,0,0,.35)}
-
-    /* SKILL CARDS */
-    .skill-grid{display:grid; grid-template-columns:repeat(auto-fit, minmax(220px,1fr)); gap:16px}
-    .skill{padding:18px; border:1px solid color-mix(in oklab,var(--border) 70%, transparent); border-radius:14px; background:var(--card); box-shadow:var(--shadow)}
-    .skill h3{margin:6px 0}
-
-    /* TIMELINE */
-    .timeline{display:grid; gap:14px}
-    .trow{display:grid; grid-template-columns:140px 1fr; gap:14px}
-    @media (max-width: 700px){ .trow{grid-template-columns:1fr} }
-    .when{font-weight:700}
-
-    /* CONTACT */
-    .contact-form{max-width:640px}
-    .frow{display:flex; gap:12px; flex-wrap:wrap}
-    .field{flex:1; min-width:220px}
-    .input, .textarea{width:100%; padding:12px; border-radius:12px; border:1px solid color-mix(in oklab,var(--border) 70%, transparent); background:var(--card); color:var(--text)}
-    .textarea{min-height:120px; resize:vertical}
-    .btn{display:inline-flex; align-items:center; gap:8px; padding:10px 14px; border-radius:12px; border:1px solid color-mix(in oklab,var(--border) 70%, transparent); background:linear-gradient(135deg, color-mix(in oklab, var(--brand) 45%, var(--card)), color-mix(in oklab, var(--brand2) 35%, var(--card))); box-shadow:var(--shadow); text-decoration:none; font-weight:700; color:#fff}
-    .btn.ghost{background:transparent; color:inherit}
-    .btn.small{padding:8px 10px; font-weight:600}
-
-    /* TO TOP + THEME TOGGLE */
-    .toTop{position:fixed; right:16px; bottom:16px; width:44px; height:44px; border-radius:50%; border:none; display:none; place-items:center; background:linear-gradient(135deg,var(--brand),var(--brand2)); color:#fff; box-shadow:var(--shadow); cursor:pointer}
-    .toTop.show{display:grid}
-    .theme{position:fixed; right:16px; bottom:72px; width:44px; height:44px; border-radius:50%; border:1px solid color-mix(in oklab,var(--border) 70%, transparent); background:var(--card); display:grid; place-items:center; box-shadow:var(--shadow); cursor:pointer}
-
-    /* ACCESSIBILITY & EFFECTS */
-    .fade{opacity:0; transform:translateY(16px); transition:opacity .6s ease, transform .6s ease}
-    .fade.show{opacity:1; transform:translateY(0)}
-    @media (prefers-reduced-motion: reduce){ .fade{transition:none} .avatar-wrap::before{animation:none} }
-
-    /* PRINT */
-    @media print{
-      body{background:#fff; color:#000}
-      .topnav, .theme, .toTop, .btn.print-hide, .project-toolbar{display:none !important}
-      .card{box-shadow:none; border-color:#ddd}
-      a{color:#000; text-decoration:none}
-      .project-card{page-break-inside:avoid}
-    }
-
-    /* QR Modal */
-    .qr-overlay{position:fixed; inset:0; background:rgba(0,0,0,.6); display:none; place-items:center; z-index:80; padding:20px}
-    .qr-overlay.show{display:grid}
-    .qr-card{background:var(--card); border:1px solid color-mix(in oklab,var(--border) 70%, transparent); border-radius:16px; padding:14px; box-shadow:var(--shadow); max-width:360px; width:100%; text-align:center}
-    .qr-card h3{margin:6px 0 10px}
-    .qr-img{width:100%; height:auto; border-radius:12px; background:#fff}
-    .qr-close{margin-top:10px}
-
-    /* Progress bar */
-    .progress{position:fixed; inset:0 0 auto 0; height:3px; background:linear-gradient(90deg,var(--brand),var(--brand2)); transform-origin:0 50%; transform:scaleX(0); z-index:55}
-
-    /* Footer */
-    footer small{opacity:.8}
-  </style>
 </head>
 <body>
-  <a href="#top" class="skip">Bỏ qua menu, đến nội dung chính</a>
-  <div class="progress" id="progress"></div>
+  <main>
+    <section id="about">
+      <h1>Phan Văn Tiến</h1>
+      <p>Full‑stack Developer & Product Builder · CEO mindset — xây sản phẩm có tác động thật, tự động hoá quy trình và tối ưu chi phí hạ tầng.</p>
+    </section>
 
-  <!-- NAVBAR -->
-  <header class="topnav" aria-label="Thanh điều hướng">
-    <div class="container inner">
-      <a class="brand" href="#top" aria-label="Trang chủ">
-        <svg viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M3 6h18v3H3zM3 11h12v3H3zM3 16h18v3H3z"/></svg>
-        <span>tienphanv.io.vn</span>
-      </a>
-      <nav class="menu" aria-label="Menu chính">
-        <a href="#about">Giới thiệu</a>
-        <a href="#skills">Kỹ năng</a>
-        <a href="#experience">Kinh nghiệm</a>
-        <a href="#projects">Dự án</a>
-        <a href="#education">Học vấn</a>
-        <a href="#contact">Liên hệ</a>
-      </nav>
-    </div>
-  </header>
+    <section id="projects">
+      <h2>Dự án tiêu biểu</h2>
+      <div class="project-grid">
+        <article class="project-card" data-tags="ai web api" style="--img:url('https://images.unsplash.com/photo-1682686580203-f7de3ad7d3bb?q=80&w=1600&auto=format&fit=crop');">
+          <h3>Chatbot Tuyển sinh DLU</h3>
+          <p>Chatbot offline hỗ trợ tuyển sinh cho Đại học Đà Lạt, tích hợp LM Studio + Llama‑3‑Instruct, sử dụng dữ liệu crawl tự động từ website trường. Triển khai trên giao diện Web và hỗ trợ Zalo OA.</p>
+          <p class="pc-tags">Python · Scrapy · LM Studio · Llama‑3‑8B · UX Conversation Design</p>
+        </article>
 
-  <!-- HERO -->
-  <main id="top" class="container">
-    <section id="about" class="hero" aria-labelledby="name">
-      <div class="hero-grid">
-        <div class="card" style="display:grid; grid-template-columns:auto 1fr; gap:16px; align-items:center;">
-          <div class="avatar-wrap">
-            <img class="avatar" src="https://raw.githubusercontent.com/teddy3704/tienphanv.github.io/main/avatar.jpg" alt="Ảnh đại diện Phan Văn Tiến" width="300" height="300"/>
-          </div>
-          <div>
-            <h1 id="name" style="font-size:clamp(28px,4vw,40px); line-height:1.2; margin:0 0 6px">Phan Văn Tiến</h1>
-            <p class="muted" style="margin:0 0 10px">Full‑stack Developer định hướng sản phẩm · Ưu tiên tốc độ triển khai (shipping), độ tin cậy (reliability) và khả năng đo lường tác động (measurable impact). Tư duy CEO: tối ưu trải nghiệm người dùng, tiết kiệm chi phí vận hành, và mở rộng quy mô một cách bền vững.</p>
-            <div class="social">
-              <a class="chip" href="mailto:2212472@dlu.edu.vn" title="Gửi email">
-                <svg viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M20 4H4a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V6a2 2 0 0 0-2-2Zm0 4-8 5L4 8V6l8 5 8-5Z"/></svg>
-                2212472@dlu.edu.vn
-              </a>
-              <a class="chip" href="https://github.com/teddy3704" target="_blank" rel="noopener" title="GitHub">
-                <svg viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M12 2a10 10 0 0 0-3.162 19.493c.5.093.683-.217.683-.483 0-.237-.01-1.022-.015-1.854-2.78.604-3.367-1.187-3.367-1.187-.455-1.155-1.11-1.463-1.11-1.463-.908-.62.07-.607.07-.607 1.003.07 1.53 1.03 1.53 1.03.892 1.528 2.341 1.087 2.91.832.09-.647.35-1.087.636-1.337-2.22-.253-4.555-1.11-4.555-4.943 0-1.091.39-1.984 1.03-2.683-.103-.253-.447-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0 1 12 6.844c.85.004 1.705.115 2.504.337 1.91-1.296 2.748-1.026 2.748-1.026.546 1.378.202 2.397.1 2.65.64.699 1.028 1.592 1.028 2.683 0 3.842-2.339 4.687-4.566 4.936.359.31.678.924.678 1.864 0 1.345-.012 2.43-.012 2.762 0 .268.18.58.688.481A10 10 0 0 0 12 2Z"/></svg>
-                github.com/teddy3704
-              </a>
-              <button class="chip" id="copyEmail" title="Sao chép email">📋 Copy email</button>
-              <a class="chip" href="#qr" id="qrBtn" title="Quét QR Zalo">💬 Zalo (QR)</a>
-            </div>
-            <div style="margin-top:12px; display:flex; gap:10px; flex-wrap:wrap">
-              <a class="btn print-hide" href="#contact">Liên hệ ngay</a>
-              <a class="btn ghost print-hide" href="#" onclick="window.print();return false;">Tải PDF</a>
-              <a class="btn ghost small print-hide" href="resume.pdf" download>⬇️ Tải CV (PDF)</a>
-            </div>
-          </div>
-        </div>
-        <div class="card">
-          <h2 style="margin-top:0">Tuyên ngôn nghề nghiệp</h2>
-          <p>
-            Tôi xây hệ thống web đơn giản mà mạnh mẽ: API rõ ràng, CI/CD gọn nhẹ, test chạy tự động. Tập trung 3 trụ cột: (1) giảm rủi ro phát hành, (2) rút ngắn chu kỳ ý tưởng → người dùng, (3) dữ liệu hoá mọi quyết định.
-          </p>
-          <ul class="muted" style="margin:8px 0 0 18px">
-            <li>Thiết kế API theo hợp đồng (contract‑first), tài liệu hoá tự động.</li>
-            <li>Pipeline CI/CD “1 file” trên GitHub Actions: lint → test → build → deploy.</li>
-            <li>Quan sát hệ thống (logs/metrics) ngay từ ngày đầu.</li>
-          </ul>
-          <div class="grid" style="grid-template-columns:repeat(auto-fit,minmax(160px,1fr)); margin-top:12px">
-            <div class="chip" style="justify-content:center">Node.js / Express</div>
-            <div class="chip" style="justify-content:center">REST API / OpenAPI</div>
-            <div class="chip" style="justify-content:center">SQL (SQLite, SQL Server)</div>
-            <div class="chip" style="justify-content:center">Git & GitHub Actions</div>
-            <div class="chip" style="justify-content:center">Testing (Postman/Newman)</div>
-          </div>
-            <div class="chip" style="justify-content:center">SQL / SQLite / SQL Server</div>
-            <div class="chip" style="justify-content:center">Git & GitHub</div>
-            <div class="chip" style="justify-content:center">Testing (Postman/Newman)</div>
-          </div>
-        </div>
+        <article class="project-card" data-tags="iot web ai" style="--img:url('https://images.unsplash.com/photo-1556911220-e15b29be8c6b?q=80&w=1600&auto=format&fit=crop');">
+          <h3>Smart Brew — IoT Coffee Monitor</h3>
+          <p>Giải pháp theo dõi và điều khiển máy pha cà phê qua cảm biến thông minh. Giao diện realtime WebSocket, API Node.js, dashboard trực quan cho chủ quán và khách hàng.</p>
+          <p class="pc-tags">Node.js · WebSocket · ESP32 · MQTT · Tailwind Dashboard</p>
+        </article>
+
+        <article class="project-card" data-tags="web api ci" style="--img:url('https://images.unsplash.com/photo-1518773553398-650c184e0bb3?q=80&w=1600&auto=format&fit=crop');">
+          <h3>Personal CV Website</h3>
+          <p>Website cá nhân tối ưu hiệu suất (Lighthouse > 98), CI/CD tự động deploy qua GitHub Actions. Tích hợp dark/light theme, lazy‑load và QR modal.</p>
+          <p class="pc-tags">HTML/CSS · GitHub Pages · CI/CD · SEO</p>
+        </article>
+
+        <article class="project-card" data-tags="api ci" style="--img:url('https://images.unsplash.com/photo-1553484771-371a605b060b?q=80&w=1600&auto=format&fit=crop');">
+          <h3>EasyFood API</h3>
+          <p>Hệ thống API backend phục vụ đặt món đa nền tảng. Authentication JWT, Postman test suite, CI/CD tự động build‑test‑deploy.</p>
+          <p class="pc-tags">Node.js · JWT · GitHub Actions · OpenAPI</p>
+        </article>
       </div>
     </section>
 
-    <!-- SKILLS -->
-    <section id="skills" class="section" aria-labelledby="skills-title">
-      <h2 id="skills-title">Kỹ năng lõi (CEO mindset)</h2>
-      <div class="skill-grid fade">
-        <div class="skill"><h3>API như sản phẩm</h3><p class="muted">Thiết kế theo domain; versioning; hợp đồng OpenAPI; rate‑limit & auth JWT.</p></div>
-        <div class="skill"><h3>CI/CD tối giản</h3><p class="muted">1 pipeline tự kiểm tra mọi PR; cache hợp lý; rollback dễ dàng.</p></div>
-        <div class="skill"><h3>Chất lượng & Test</h3><p class="muted">Postman/Newman E2E; unit/integration; kiểm tra hồi quy trước khi phát hành.</p></div>
-        <div class="skill"><h3>Data & DB</h3><p class="muted">Thiết kế schema, migration an toàn; truy vấn hiệu quả; backup & seeding.</p></div>
-        <div class="skill"><h3>Vận hành & Quan sát</h3><p class="muted">Log có cấu trúc, healthcheck, cấu hình 12‑factor, cảnh báo sớm.</p></div>
-      </div>
+    <section id="value">
+      <h2>Tư duy lãnh đạo sản phẩm</h2>
+      <ul>
+        <li><strong>Tốc độ có kiểm soát:</strong> Ưu tiên release nhỏ, đo đạc mỗi lần phát hành.</li>
+        <li><strong>Đo được tác động:</strong> Mọi quyết định đều dựa trên số liệu và phản hồi người dùng.</li>
+        <li><strong>Tự động hoá:</strong> CI/CD, kiểm thử và giám sát hệ thống ngay từ ngày đầu.</li>
+        <li><strong>Tư duy người sáng lập:</strong> Nhìn sản phẩm như doanh nghiệp thu nhỏ — có người dùng, chi phí và giá trị.</li>
+      </ul>
     </section>
 
-    <!-- EXPERIENCE -->
-    <section id="experience" class="section" aria-labelledby="exp-title">
-      <h2 id="exp-title">Kinh nghiệm</h2>
-      <div class="timeline card fade">
-        <div class="trow">
-          <div class="when">01/2025 – 06/2025</div>
-          <div>
-            <div style="font-weight:700">Easy Food — Web & Android (đồ án nhóm)</div>
-            <ul class="muted" style="margin:6px 0 0 18px">
-              <li>Thiết kế REST API theo chuẩn tài liệu hoá tự động (OpenAPI), xác thực JWT, phân quyền cơ bản.</li>
-              <li>Xây bộ test Postman + Newman chạy CI trên GitHub Actions (mỗi PR bắt buộc pass trước khi merge).</li>
-              <li>Chuẩn hoá schema & migration; seed dữ liệu demo; tạo script khởi tạo môi trường nhanh.</li>
-            </ul>
-          </div>
-        </div>
-        <div class="trow">
-          <div class="when">2025</div>
-          <div>
-            <div style="font-weight:700">Web nâng cao — Client/Server Labs</div>
-            <ul class="muted" style="margin:6px 0 0 18px">
-              <li>Xây máy chủ phục vụ static/dynamic; hiểu sâu lifecycle request–response, headers & caching.</li>
-              <li>Áp dụng kiểm thử bảo mật: rate‑limit, input validation, kiểm soát lỗi/timeout.</li>
-            </ul>
-          </div>
-        </div>
-      </div>
+    <section id="contact">
+      <h2>Liên hệ</h2>
+      <p>📧 <a href="mailto:2212472@dlu.edu.vn">2212472@dlu.edu.vn</a> · 💬 Zalo QR trên trang · 🔗 GitHub: <a href="https://github.com/teddy3704" target="_blank">teddy3704</a></p>
     </section>
-
-    <!-- VALUE SECTION (new) -->
-    <section class="section" aria-labelledby="value-title">
-      <h2 id="value-title">Tôi mang lại gì cho đội ngũ?</h2>
-      <div class="grid cols-2 fade">
-        <div class="card">
-          <h3 style="margin:6px 0">Tốc độ có kiểm soát</h3>
-          <p class="muted">Ưu tiên release nhỏ, đều đặn; mỗi lần phát hành đều có log thay đổi và test đi kèm.</p>
-        </div>
-        <div class="card">
-          <h3 style="margin:6px 0">Chi phí hợp lý</h3>
-          <p class="muted">Chọn công cụ nhẹ, miễn phí/OSS khi phù hợp; cấu hình tối giản để dễ bảo trì.</p>
-        </div>
-        <div class="card">
-          <h3 style="margin:6px 0">Đo được tác động</h3>
-          <p class="muted">Thiết lập chỉ số đơn giản (build time, test pass rate, lỗi sản xuất) để ra quyết định.</p>
-        </div>
-        <div class="card">
-          <h3 style="margin:6px 0">Tư duy sản phẩm</h3>
-          <p class="muted">Viết tính năng bắt đầu từ nhu cầu người dùng; loại bỏ phức tạp không cần thiết.</p>
-        </div>
-
-    <!-- PROJECTS -->
-    <section id="projects" class="section" aria-labelledby="proj-title">
-      <div style="display:flex; align-items:center; justify-content:space-between; gap:12px; flex-wrap:wrap">
-        <h2 id="proj-title" style="margin:0">Dự án tiêu biểu</h2>
-        <div class="project-toolbar print-hide" role="toolbar" aria-label="Bộ lọc dự án">
-          <button class="chip" data-filter="all" aria-pressed="true">Tất cả</button>
-          <button class="chip" data-filter="api">API</button>
-          <button class="chip" data-filter="web">Web</button>
-          <button class="chip" data-filter="ci">CI/CD</button>
-        </div>
-      </div>
-
-      <div class="project-grid fade" id="projectGrid">
-        <a class="project-card" href="https://tienphanv.io.vn" target="_blank" rel="noopener"
-           data-tags="web" style="--img:url('https://images.unsplash.com/photo-1518773553398-650c184e0bb3?q=80&w=1600&auto=format&fit=crop');">
-          <div class="pc-title">Personal CV Website</div>
-          <div class="pc-tags">HTML/CSS · GitHub Pages</div>
-        </a>
-        <div class="project-card" data-tags="api ci"
-             style="--img:url('https://images.unsplash.com/photo-1553484771-371a605b060b?q=80&w=1600&auto=format&fit=crop');">
-          <div class="pc-title">EasyFood API</div>
-          <div class="pc-tags">Node.js · JWT · CI</div>
-        </div>
-        <a class="project-card" href="https://github.com/teddy3704" target="_blank" rel="noopener" data-tags="api web"
-           style="--img:url('https://images.unsplash.com/photo-1527430253228-e93688616381?q=80&w=1600&auto=format&fit=crop');">
-          <div class="pc-title">Postman Collections</div>
-          <div class="pc-tags">Testing · Newman</div>
-        </a>
-      </div>
-    </section>
-
-    <!-- EDUCATION -->
-    <section id="education" class="section" aria-labelledby="edu-title">
-      <h2 id="edu-title">Học vấn</h2>
-      <div class="card fade">
-        <div class="trow" style="grid-template-columns:1fr">
-          <div>
-            <div style="font-weight:700">Đại học Đà Lạt — Công nghệ phần mềm</div>
-            <div class="muted">2022 – nay · Các môn nổi bật: Kiểm thử phần mềm, Phát triển Web nâng cao.</div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- CONTACT -->
-    <section id="contact" class="section" aria-labelledby="contact-title">
-      <h2 id="contact-title">Liên hệ</h2>
-      <div class="card fade contact-form">
-        <p class="muted">Điền form dưới đây để gửi lời nhắn. Nếu chưa cấu hình Formspree, hệ thống sẽ mở email với nội dung đã điền.</p>
-        <form id="contactForm" action="https://formspree.io/f/your-id" method="POST" novalidate>
-          <input type="text" name="_gotcha" tabindex="-1" autocomplete="off" style="position:absolute; left:-5000px" aria-hidden="true" />
-          <div class="frow">
-            <label class="field">Tên của bạn
-              <input class="input" type="text" name="name" placeholder="Ví dụ: Nguyễn Văn A" required />
-            </label>
-            <label class="field">Email của bạn
-              <input class="input" type="email" name="email" placeholder="you@example.com" required />
-            </label>
-          </div>
-          <label> Lời nhắn
-            <textarea class="textarea" name="message" placeholder="Nội dung bạn muốn trao đổi" required></textarea>
-          </label>
-          <div style="display:flex; gap:10px; align-items:center; margin-top:12px">
-            <button class="btn" id="sendBtn" type="submit">
-              <svg width="18" height="18" viewBox="0 0 24 24" aria-hidden="true"><path fill="#fff" d="M2 21V3l20 9-20 9Zm3-4.36L16.85 12 5 7.36V10l7 2-7 2v2.64Z"/></svg>
-              Gửi
-            </button>
-            <span id="status" class="muted" aria-live="polite"></span>
-          </div>
-        </form>
-      </div>
-    </section>
-
-    <footer class="section muted" style="text-align:center">© <span id="year"></span> Phan Văn Tiến · <small>Cập nhật: 30/10/2025</small></footer>
   </main>
-
-  <!-- QR Overlay -->
-  <div class="qr-overlay" id="qrOverlay" aria-hidden="true">
-    <div class="qr-card" role="dialog" aria-modal="true" aria-labelledby="qrTitle">
-      <h3 id="qrTitle">Quét QR Zalo</h3>
-      <img class="qr-img" src="https://raw.githubusercontent.com/teddy3704/tienphanv.github.io/main/QR.jpg" alt="QR Zalo - Phan Văn Tiến" width="320" height="320" loading="lazy"/>
-      <button class="btn qr-close" id="qrClose">Đóng</button>
-    </div>
-  </div>
-
-  <!-- Floating buttons -->
-  <button class="theme" id="themeBtn" title="Bật/Tắt giao diện sáng tối" aria-pressed="false" aria-label="Giao diện">
-    <svg id="themeIcon" width="18" height="18" viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M12 3a1 1 0 0 1 1 1v2a1 1 0 1 1-2 0V4a1 1 0 0 1 1-1m7 9a1 1 0 0 1 1 1h2a1 1 0 1 1 0 2h-2a1 1 0 1 1-2 0 6 6 0 1 1-6-6 1 1 0 1 1 0-2 8 8 0 1 0 8 8 1 1 0 1 1-2 0a1 1 0 0 1 1-1Z"/></svg>
-  </button>
-  <button class="toTop" id="toTop" aria-label="Lên đầu trang">↑</button>
-
-  <script>
-    // UTIL: qs
-    const $ = (s, r=document) => r.querySelector(s);
-
-    // Theme toggle with localStorage + prefers-color-scheme
-    (function initTheme(){
-      const saved = localStorage.getItem('theme');
-      const prefersDark = matchMedia('(prefers-color-scheme: dark)').matches;
-      if(saved==='dark' || (!saved && prefersDark)) document.documentElement.style.colorScheme='dark';
-      if(saved==='light') document.documentElement.style.colorScheme='light';
-      $('#themeBtn').addEventListener('click', ()=>{
-        const cs = getComputedStyle(document.documentElement).colorScheme;
-        const next = cs==='dark' ? 'light' : 'dark';
-        document.documentElement.style.colorScheme = next;
-        localStorage.setItem('theme', next);
-        $('#themeBtn').setAttribute('aria-pressed', next==='dark');
-      });
-    })();
-
-    // Smooth scroll for anchor links
-    document.querySelectorAll('a[href^="#"]').forEach(a=>{
-      a.addEventListener('click', e=>{
-        const id=a.getAttribute('href'); if(id==="#"||id==="") return;
-        const el=document.querySelector(id); if(!el) return;
-        e.preventDefault(); el.scrollIntoView({behavior:'smooth', block:'start'});
-        history.pushState(null, '', id);
-      });
-    });
-
-    // Active menu highlight using IntersectionObserver
-    const links=[...document.querySelectorAll('.menu a')];
-    const map=new Map(links.map(a=>[a.getAttribute('href'),a]));
-    const io=new IntersectionObserver(es=>{
-      es.forEach(e=>{
-        const id='#'+e.target.id; const el=map.get(id); if(!el) return;
-        if(e.isIntersecting){ links.forEach(l=>l.classList.remove('active')); el.classList.add('active'); el.setAttribute('aria-current','page'); }
-      });
-    },{threshold:.4});
-    document.querySelectorAll('section[id]').forEach(s=>io.observe(s));
-
-    // Fade-in on scroll
-    const fadeIO=new IntersectionObserver(es=>{ es.forEach(e=>{ if(e.isIntersecting){ e.target.classList.add('show'); fadeIO.unobserve(e.target);} }); },{threshold:.15});
-    document.querySelectorAll('.fade').forEach(el=>fadeIO.observe(el));
-
-    // To top button + progress bar
-    const toTop=$('#toTop');
-    const progress=$('#progress');
-    addEventListener('scroll',()=>{
-      toTop.classList.toggle('show', scrollY>500);
-      const h=document.documentElement; const ratio=(h.scrollTop)/(h.scrollHeight-h.clientHeight);
-      progress.style.transform=`scaleX(${Math.max(0, Math.min(1, ratio))})`;
-    });
-    toTop.addEventListener('click',()=>scrollTo({top:0,behavior:'smooth'}));
-
-    // Copy email button
-    $('#copyEmail')?.addEventListener('click', async ()=>{
-      try{ await navigator.clipboard.writeText('2212472@dlu.edu.vn');
-        const b=$('#copyEmail'); b.textContent='✅ Đã sao chép'; setTimeout(()=>b.textContent='📋 Copy email',1500);
-      }catch{ alert('Không sao chép được, vui lòng copy thủ công.'); }
-    });
-
-    // Project filter
-    (function initFilter(){
-      const grid=$('#projectGrid'); const btns=[...document.querySelectorAll('[data-filter]')];
-      btns.forEach(b=>b.addEventListener('click',()=>{
-        btns.forEach(x=>x.removeAttribute('aria-pressed'));
-        b.setAttribute('aria-pressed','true');
-        const f=b.dataset.filter; // all | tag
-        [...grid.children].forEach(card=>{
-          const tags=(card.getAttribute('data-tags')||'').split(/\s+/);
-          card.style.display=(f==='all'||tags.includes(f))?'' : 'none';
-        });
-      }));
-    })();
-
-    // Contact form: Formspree AJAX + mailto fallback + spam honeypot
-    (function initForm(){
-      const form=$('#contactForm'); const btn=$('#sendBtn'); const st=$('#status');
-      form.addEventListener('submit', async (e)=>{
-        e.preventDefault();
-        const data=new FormData(form);
-        if(data.get('_gotcha')) return; // bot detected
-        const hasFormspree=!form.action.includes('your-id');
-        btn.disabled=true; st.textContent='Đang gửi…';
-        if(hasFormspree){
-          try{
-            const r=await fetch(form.action,{method:'POST',body:data,headers:{'Accept':'application/json'}});
-            if(r.ok){ st.textContent='Đã gửi thành công!'; form.reset(); }
-            else{
-              const j=await r.json().catch(()=>({}));
-              st.textContent=j && j.errors ? j.errors.map(e=>e.message).join(', ') : 'Gửi thất bại. Thử lại nhé.';
-            }
-          }catch{ st.textContent='Lỗi mạng. Thử lại nhé.'; }
-          finally{ btn.disabled=false }
-        } else {
-          // Fallback: open mail client with prefilled body
-          const n=encodeURIComponent(data.get('name')||'');
-          const em=encodeURIComponent(data.get('email')||'');
-          const m=encodeURIComponent(data.get('message')||'');
-          const mailto=`mailto:2212472@dlu.edu.vn?subject=Tin%20nh%E1%BA%AFn%20t%E1%BB%AB%20CV&body=T%C3%AAn:%20${n}%0AEmail:%20${em}%0A%0A${m}`;
-          location.href=mailto; st.textContent='Mở ứng dụng email của bạn…'; btn.disabled=false;
-        }
-      });
-    })();
-
-    // Year
-    $('#year').textContent=new Date().getFullYear();
-  
-    // QR overlay open/close
-    const qrBtn = document.getElementById('qrBtn');
-    const qrOverlay = document.getElementById('qrOverlay');
-    const qrClose = document.getElementById('qrClose');
-    qrBtn?.addEventListener('click',(e)=>{ e.preventDefault(); qrOverlay.classList.add('show'); });
-    qrClose?.addEventListener('click',()=> qrOverlay.classList.remove('show'));
-    qrOverlay?.addEventListener('click',(e)=>{ if(e.target===qrOverlay) qrOverlay.classList.remove('show'); });
-  </script>
 </body>
 </html>
